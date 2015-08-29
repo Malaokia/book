@@ -40,7 +40,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="1.2.1" data-basepath="../.." data-revision="Fri Aug 28 2015 17:08:30 GMT-0600 (Mountain Daylight Time)">
+    <div class="book" data-level="1.2.1" data-basepath="../.." data-revision="Fri Aug 28 2015 23:03:19 GMT-0600 (Mountain Daylight Time)">
     
 
 <div class="book-summary">
@@ -435,55 +435,52 @@ to render a whole bunch of elements.</p>
 <h2 id="1d-data">1D Data</h2>
 <h3 id="a-list-of-numbers">A list of numbers</h3>
 <p>Draw negative numbers in red and positive numbers in green.</p>
-<li>43</li>
+<pre><code>&lt;li color=&quot; green &quot;&gt;43&lt;/li&gt;
 
-<li>21</li>
+&lt;li color=&quot; green &quot;&gt;21&lt;/li&gt;
 
-<li>-13</li>
+&lt;li color=&quot; red &quot;&gt;-13&lt;/li&gt;
 
-<li>32</li>
+&lt;li color=&quot; green &quot;&gt;32&lt;/li&gt;
 
-<li>20</li>
+&lt;li color=&quot; green &quot;&gt;20&lt;/li&gt;
 
-<li>5</li>
+&lt;li color=&quot; green &quot;&gt;5&lt;/li&gt;
 
-<li>-8</li>
+&lt;li color=&quot; red &quot;&gt;-8&lt;/li&gt;
 
-<li>29</li>
+&lt;li color=&quot; green &quot;&gt;29&lt;/li&gt;
 
-<li>9</li>
+&lt;li color=&quot; green &quot;&gt;9&lt;/li&gt;
+</code></pre><svg width="500" height="200">
 
+    <rect x="30" width="20" height="43" style="  fill:rgb(0,255,0);stroke-width:3;stroke:rgb(0,0,0) "/>
 
-<svg width="500" height="200">
+    <rect x="60" width="20" height="21" style="  fill:rgb(0,255,0);stroke-width:3;stroke:rgb(0,0,0) "/>
 
-    <rect x="30" width="20" height="43" style="  fill:rgb(0,255,0);stroke-width:3;stroke:rgb(0,0,0)  "/>
+    <rect x="90" width="20" height="-13" style=" fill:rgb(255,0,0) "/>
 
-    <rect x="60" width="20" height="21" style="  fill:rgb(0,255,0);stroke-width:3;stroke:rgb(0,0,0)  "/>
+    <rect x="120" width="20" height="32" style="  fill:rgb(0,255,0);stroke-width:3;stroke:rgb(0,0,0) "/>
 
-    <rect x="90" width="20" height="-13" style=" fill:rgb(255,0,0);stroke-width:3;stroke:rgb(0,0,0)  "/>
+    <rect x="150" width="20" height="20" style="  fill:rgb(0,255,0);stroke-width:3;stroke:rgb(0,0,0) "/>
 
-    <rect x="120" width="20" height="32" style="  fill:rgb(0,255,0);stroke-width:3;stroke:rgb(0,0,0)  "/>
+    <rect x="180" width="20" height="5" style="  fill:rgb(0,255,0);stroke-width:3;stroke:rgb(0,0,0) "/>
 
-    <rect x="150" width="20" height="20" style="  fill:rgb(0,255,0);stroke-width:3;stroke:rgb(0,0,0)  "/>
+    <rect x="210" width="20" height="-8" style=" fill:rgb(255,0,0) "/>
 
-    <rect x="180" width="20" height="5" style="  fill:rgb(0,255,0);stroke-width:3;stroke:rgb(0,0,0)  "/>
+    <rect x="240" width="20" height="29" style="  fill:rgb(0,255,0);stroke-width:3;stroke:rgb(0,0,0) "/>
 
-    <rect x="210" width="20" height="-8" style=" fill:rgb(255,0,0);stroke-width:3;stroke:rgb(0,0,0)  "/>
-
-    <rect x="240" width="20" height="29" style="  fill:rgb(0,255,0);stroke-width:3;stroke:rgb(0,0,0)  "/>
-
-    <rect x="270" width="20" height="9" style="  fill:rgb(0,255,0);stroke-width:3;stroke:rgb(0,0,0)  "/>
+    <rect x="270" width="20" height="9" style="  fill:rgb(0,255,0);stroke-width:3;stroke:rgb(0,0,0) "/>
 
 </svg>
-(Hint: use the [if tag](https://mozilla.github.io/nunjucks/templating.html#if))
-
-### Bar Chart
 
 
-
-* Below should be a bar chart to display the data: 43,21,32,20,5,29,9
-* There should be some gaps between the bars.
-
+<h3 id="bar-chart">Bar Chart</h3>
+<p>(Hint: use the <a href="https://mozilla.github.io/nunjucks/templating.html#if" target="_blank">if tag</a>)</p>
+<ul>
+<li>Below should be a bar chart to display the data: 43,21,32,20,5,29,9</li>
+<li>There should be some gaps between the bars.</li>
+</ul>
 <svg width="500" height="200">
 
     <rect x="30" width="20" height="43" style="  fill:rgb(0,255,0);stroke-width:3;stroke:rgb(0,0,0)  "/>
@@ -602,15 +599,16 @@ to render a whole bunch of elements.</p>
 </ul>
 <svg width="500" height="200" style="border:1px solid grey">
 
-    <circle cx="10" cy="15" r="2" stroke="black" stroke-width="3" fill="red"/>
 
-    <circle cx="20" cy="12" r="2" stroke="black" stroke-width="3" fill="red"/>
+    <circle cx="230" cy="45" r="9" stroke="black" stroke-width="3" fill="red"/>
 
-    <circle cx="31" cy="42" r="2" stroke="black" stroke-width="3" fill="red"/>
+    <circle cx="260" cy="36" r="9" stroke="black" stroke-width="3" fill="red"/>
 
-    <circle cx="12" cy="52" r="2" stroke="black" stroke-width="3" fill="red"/>
+    <circle cx="293" cy="126" r="9" stroke="black" stroke-width="3" fill="red"/>
 
-    <circle cx="33" cy="24" r="2" stroke="black" stroke-width="3" fill="red"/>
+    <circle cx="236" cy="156" r="9" stroke="black" stroke-width="3" fill="red"/>
+
+    <circle cx="299" cy="72" r="9" stroke="black" stroke-width="3" fill="red"/>
 
 </svg>
 
@@ -619,15 +617,20 @@ to render a whole bunch of elements.</p>
 of the circle to represent the third value.</p>
 <svg width="500" height="200" style="border:1px solid grey">
 
-    <circle cx="10" cy="15" r="2" stroke="black" stroke-width="3" fill="red"/>
+    <circle cx="230" cy="45" r="7" stroke="black" stroke-width="3" fill="red"/>
 
-    <circle cx="20" cy="12" r="2" stroke="black" stroke-width="3" fill="red"/>
 
-    <circle cx="31" cy="42" r="2" stroke="black" stroke-width="3" fill="red"/>
+    <circle cx="260" cy="36" r="5" stroke="black" stroke-width="3" fill="red"/>
 
-    <circle cx="12" cy="52" r="2" stroke="black" stroke-width="3" fill="red"/>
 
-    <circle cx="33" cy="24" r="2" stroke="black" stroke-width="3" fill="red"/>
+    <circle cx="293" cy="126" r="9" stroke="black" stroke-width="3" fill="red"/>
+
+
+    <circle cx="236" cy="156" r="4" stroke="black" stroke-width="3" fill="red"/>
+
+
+    <circle cx="299" cy="72" r="9" stroke="black" stroke-width="3" fill="red"/>
+
 
 </svg>
 
