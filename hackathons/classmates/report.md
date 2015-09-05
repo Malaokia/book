@@ -7,27 +7,25 @@ on the "self-introduction" data. Out of these questions, our team chose to tackl
 the following:
 
 # (Question 1)
-
 {% lodash %}
-return "[answer]"
+return "Who submitted on or before the deadlines?"
 {% endlodash %}
 
 
 # (Question 2)
-
 {% lodash %}
-return "[answer]"
+return "Who(name) has the User ID: 13950166?"
 {% endlodash %}
 
 
 # (Question 3)
-
 {% lodash %}
-return "[answer]"
+return "How many people are computer science major?"
 {% endlodash %}
 
-# (Question 4)
 
+
+# (Question 4)
 {% lodash %}
-return "[answer]"
+return "How many people submit after deadline?"
 {% endlodash %}

@@ -5,7 +5,7 @@
         <!-- head:start -->
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Week 1 | book</title>
+        <title>Report | book</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.2.0">
@@ -37,10 +37,10 @@
         
     
     
-    <link rel="next" href="../../learning/week1/svg-template.html" />
+    <link rel="next" href="../../learning/week2/viz.html" />
     
     
-    <link rel="prev" href="../../learning/intro/q-packages.html" />
+    <link rel="prev" href="../../learning/week2/index.html" />
     
 
         <!-- head:end -->
@@ -48,7 +48,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="1.2" data-basepath="../.." data-revision="Fri Sep 04 2015 20:08:03 GMT-0600 (Mountain Daylight Time)">
+    <div class="book" data-level="1.3.1" data-basepath="../.." data-revision="Fri Sep 04 2015 20:08:03 GMT-0600 (Mountain Daylight Time)">
     
 
 <div class="book-summary">
@@ -160,7 +160,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="learning/week1/index.html">
+        <li class="chapter " data-level="1.2" data-path="learning/week1/index.html">
             
                 
                     <a href="../../learning/week1/index.html">
@@ -227,7 +227,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="learning/week2/report.html">
+        <li class="chapter active" data-level="1.3.1" data-path="learning/week2/report.html">
             
                 
                     <a href="../../learning/week2/report.html">
@@ -525,13 +525,70 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="team">Team</h1>
-<ul>
-<li>Lodash 101</li>
-<li>Template Engine</li>
-</ul>
-<h1 id="individual">Individual</h1>
-<p>TBA</p>
+                        <h1 id="report">Report</h1>
+<p>There are 26 students who gave a self-introduction. As a
+class, we brainstormed and came up with a long list of further questions we can
+ask based on this data. Our team chose to tackle on the following:</p>
+<h1 id="-question-1">(Question 1)</h1>
+<h2 id="-who-submitted-on-or-before-the-deadlines">&quot;Who submitted on or before the deadlines?&quot;</h2>
+<p><pre>
+
+result = _.pluck(data.comments, <span class="string">&quot;created_at&quot;</span>)
+<span class="keyword">var</span> result = _.size(_.filter(result,<span class="keyword">function</span>(n){
+    n = n.split(<span class="string">&quot;T&quot;</span>)[<span class="number">0</span>].split(<span class="string">&quot;-&quot;</span>)[<span class="number">2</span>];
+    <span class="keyword">return</span> _.inRange(n,<span class="number">1</span>,<span class="number">25</span>);
+}))
+console.log(result)
+<span class="keyword">return</span> result
+</pre><div class="console"><pre>console&gt; 21
+</pre></div>
+The answer is 21.</p>
+<h1 id="-question-2">(Question 2)</h1>
+<h2 id="-who-name-has-the-user-id-13950166">&quot;Who(name) has the User ID: 13950166?&quot;</h2>
+<p><pre>
+<span class="keyword">var</span> text = _.filter(data.comments, <span class="keyword">function</span>(n){
+    <span class="keyword">return</span> _.includes(n.user,<span class="number">13950166</span>);
+})
+<span class="keyword">var</span> text1 = _.pluck(text, <span class="string">&quot;body&quot;</span>)
+console.log(text1)
+<span class="keyword">var</span> name = _.map(text1, <span class="keyword">function</span>(n){
+    <span class="keyword">var</span> text2 = n.split(<span class="string">&quot;\r\n&quot;</span>)[<span class="number">0</span>]
+    <span class="keyword">return</span> _.last(text2.split(<span class="string">&quot;Name:&quot;</span>))
+})
+result = name
+console.log(result)
+<span class="keyword">return</span> result
+</pre><div class="console"><pre>console&gt; [&quot;Name: TJ Romanowski\r\nMajor: Computer Science\r\nFavorite Programming Language: Java\r\nFavorite Food: Mexican&quot;]
+console&gt; [&quot; TJ Romanowski&quot;]
+</pre></div>
+The answer is  TJ Romanowski.</p>
+<h1 id="-question-3">(Question 3)</h1>
+<h2 id="-how-many-people-are-computer-science-major">&quot;How many people are computer science major?&quot;</h2>
+<p><pre>
+result = _.pluck(data.comments, <span class="string">&quot;body&quot;</span>)
+result = _.size(_.filter(result, <span class="keyword">function</span>(n){
+    <span class="keyword">return</span> _.contains(n, <span class="string">&quot;Computer&quot;</span>)||_.contains(n,<span class="string">&quot;cs\r&quot;</span>)||_.contains(n,<span class="string">&quot;CS&quot;</span>);
+}))
+console.log(result)
+<span class="keyword">return</span> result
+</pre><div class="console"><pre>console&gt; 22
+</pre></div>
+The answer is 22.
+We included Susssant&apos;s Computer Engineering, because he thinks that computer Engineering is part of Computer Science.</p>
+<h1 id="-question-4">(Question 4)</h1>
+<h2 id="-how-many-people-submit-after-deadline">&quot;How many people submit after deadline?&quot;</h2>
+<p><pre>
+result = _.pluck(data.comments, <span class="string">&quot;created_at&quot;</span>)
+<span class="keyword">var</span> result = _.size(_.filter(result,<span class="keyword">function</span>(n){
+    n = n.split(<span class="string">&quot;T&quot;</span>)[<span class="number">0</span>].split(<span class="string">&quot;-&quot;</span>)[<span class="number">2</span>];
+    
+    <span class="keyword">return</span> _.inRange(n,<span class="number">25</span>,<span class="number">40</span>) ;
+}))
+console.log(result)
+<span class="keyword">return</span> result
+</pre><div class="console"><pre>console&gt; 5
+</pre></div>
+The answer is 5.</p>
 
                     
                     </section>
@@ -542,10 +599,10 @@
         </div>
 
         
-        <a href="../../learning/intro/q-packages.html" class="navigation navigation-prev " aria-label="Previous page: Q. Packages"><i class="fa fa-angle-left"></i></a>
+        <a href="../../learning/week2/index.html" class="navigation navigation-prev " aria-label="Previous page: Week 2"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../learning/week1/svg-template.html" class="navigation navigation-next " aria-label="Next page: Template Engine"><i class="fa fa-angle-right"></i></a>
+        <a href="../../learning/week2/viz.html" class="navigation navigation-next " aria-label="Next page: Tableau Viz"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
