@@ -16,8 +16,8 @@ your own image. Please makes sure your screenshot includes the _entire_ Tableau 
 including the controls, widgets ...etc.
 
 # How big the deal Tableau really is?
-
-(write your answer based on the statistics you can find online)
+data visualization able to describe information through visual rendering. It provided 
+different perspective than the raw data, providing a visual insight into the data. Tableau will able to connect different data source and transform it to visually understandable data. Tableau allow compatibility across multiple platforms and capable of handling big data analysis.
 
 # (Question 1)
 
