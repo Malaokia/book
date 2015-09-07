@@ -21,28 +21,23 @@ different perspective than the raw data, providing a visual insight into the dat
 
 # (Question 1)
 
-![screenshot](screenshot.png)
+![screenshot](Q1.PNG)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+THE ANSWER IS 21 SAME AS DOING WITH LODASH, AND IF YOU LOOK AT THE LONGER HORIZONTAL, IT CLEARLY SHOW IT IS 21.
 
 # (Question 2)
 
-![screenshot](screenshot.png)
+![screenshot](Q2.PNG)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+IT SHOW THAT USER ID MATCH WITH THE USER NAME
 
 # (Question 3)
 
-![screenshot](screenshot.png)
+![screenshot](Q3.PNG)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
-
+I USE ANALYSIS CODE TO DO THE VARIABLE. YOU CAN SEE THAT THE BAR CHART CLEARLY SHOW IT IS 21
 # (Question 4)
 
-![screenshot](screenshot.png)
+![screenshot](Q4.PNG)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+SAME AS THE FIRST QUESTION BUT I APPLY CODE THAT TAKE DATE THAT IS GREATER THAN 24
