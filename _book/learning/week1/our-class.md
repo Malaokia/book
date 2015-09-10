@@ -1,5 +1,3 @@
-
-
 ## Q. When did the user 'grahamannett' leave a comment?
 
 {% lodash %}
