@@ -124,3 +124,5 @@ return data.public_repos
 {% lodash %}
 return data.public_gists
 {% endlodash %}
+
+{{result}} number of doubleshow
