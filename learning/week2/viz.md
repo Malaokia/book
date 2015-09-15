@@ -21,7 +21,7 @@ different perspective than the raw data, providing a visual insight into the dat
 
 # (Question 1)
 
-![screenshot](Q1.PNG)
+![screenshot](qs1.PNG)
 
 THE ANSWER IS 21 SAME AS DOING WITH LODASH, AND IF YOU LOOK AT THE LONGER HORIZONTAL, IT CLEARLY SHOW IT IS 21.
 
