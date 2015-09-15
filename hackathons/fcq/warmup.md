@@ -8,8 +8,9 @@ Next, complete the following warmup exercises as a team.
 ## How many unique subject codes?
 
 {% lodash %}
-// TODO: replace with code that computes the actual result
-return 113
+var result = _.size(_.uniq(_.pluck(data, "Subject")))
+return result
+//return 113
 {% endlodash %}
 
 They are {{ result }} unique subject codes.
@@ -17,8 +18,12 @@ They are {{ result }} unique subject codes.
 ## How many computer science (CSCI) courses?
 
 {% lodash %}
-// TODO: replace with code that computes the actual result
-return 63
+var S = _.pluck(data, "Subject")
+var result = _.size(_.filter(S, function(n){
+    return n == "CSCI"
+}))
+return result
+//return 63
 {% endlodash %}
 
 They are {{ result }} computer science courses.
@@ -27,7 +32,12 @@ They are {{ result }} computer science courses.
 
 {% lodash %}
 // TODO: replace with code that computes the actual result
-return {"HIST": 78,"HONR": 20,"HUMN": 17,"IAFS": 20,"IPHY": 134}
+var groups = _.groupBy(data, "Subject")
+var result = _.mapValues(groups, function(n){
+    return n.length
+})
+return result
+//return {"HIST": 78,"HONR": 20,"HUMN": 17,"IAFS": 20,"IPHY": 134}
 {% endlodash %}
 
 <table>
@@ -43,13 +53,15 @@ return {"HIST": 78,"HONR": 20,"HUMN": 17,"IAFS": 20,"IPHY": 134}
 
 {% lodash %}
 // TODO: replace with code that computes the actual result
+
 var grps = _.groupBy(data, 'Subject')
-var ret = _.pick(_.mapValues(grps, function(d){
+var result = _.pick(_.mapValues(grps, function(d){
     return d.length
 }), function(x){
     return x > 100
 })
-return {"IPHY": 134,"MATH": 232,"MCDB": 117,"PHIL": 160,"PSCI": 117}
+return result
+/*return {"IPHY": 134,"MATH": 232,"MCDB": 117,"PHIL": 160,"PSCI": 117}*/
 {% endlodash %}
 
 <table>
@@ -65,7 +77,16 @@ return {"IPHY": 134,"MATH": 232,"MCDB": 117,"PHIL": 160,"PSCI": 117}
 
 {% lodash %}
 // TODO: replace with code that computes the actual result
-return {"IPHY": 5507,"MATH": 8725,"PHIL": 5672,"PHYS": 8099,"PSCI": 5491}
+
+var groups = _.groupBy(data, 'Subject')
+var result = _.pick(_.mapValues(groups, function(d){
+    var a = _.pluck(d, 'N.ENROLL')
+    return _.sum(a)
+}), function(x){
+        return x > 5000
+})
+return result
+/*return {"IPHY": 5507,"MATH": 8725,"PHIL": 5672,"PHYS": 8099,"PSCI": 5491}*/
 {% endlodash %}
 
 <table>
@@ -81,7 +102,12 @@ return {"IPHY": 5507,"MATH": 8725,"PHIL": 5672,"PHYS": 8099,"PSCI": 5491}
 
 {% lodash %}
 // TODO: replace with code that computes the actual result
-return ['4830','4830']
+var groups = _.groupBy(O, "Instructors")
+var result = _.pick(_.mapValues(grps, function(d){
+    return _.pluck(d, "CourseTitle")
+}))
+return result
+//return ['4830','4830']
 {% endlodash %}
 
 They are {{result}}.

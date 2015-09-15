@@ -48,7 +48,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="2.3.1" data-basepath="../.." data-revision="Mon Sep 14 2015 16:20:10 GMT-0600 (Mountain Daylight Time)">
+    <div class="book" data-level="2.3.1" data-basepath="../.." data-revision="Mon Sep 14 2015 18:27:25 GMT-0600 (Mountain Daylight Time)">
     
 
 <div class="book-summary">
@@ -647,20 +647,30 @@
 <p>Next, complete the following warmup exercises as a team.</p>
 <h2 id="how-many-unique-subject-codes">How many unique subject codes?</h2>
 <p><pre>
-<span class="comment">// TODO: replace with code that computes the actual result</span>
-<span class="keyword">return</span> <span class="number">113</span>
+<span class="keyword">var</span> result = _.size(_.uniq(_.pluck(data, <span class="string">&quot;Subject&quot;</span>)))
+<span class="keyword">return</span> result
+<span class="comment">//return 113</span>
 </pre></p>
 <p>They are 113 unique subject codes.</p>
 <h2 id="how-many-computer-science-csci-courses">How many computer science (CSCI) courses?</h2>
 <p><pre>
-<span class="comment">// TODO: replace with code that computes the actual result</span>
-<span class="keyword">return</span> <span class="number">63</span>
+<span class="keyword">var</span> S = _.pluck(data, <span class="string">&quot;Subject&quot;</span>)
+<span class="keyword">var</span> result = _.size(_.filter(S, <span class="keyword">function</span>(n){
+    <span class="keyword">return</span> n == <span class="string">&quot;CSCI&quot;</span>
+}))
+<span class="keyword">return</span> result
+<span class="comment">//return 63</span>
 </pre></p>
 <p>They are 63 computer science courses.</p>
 <h2 id="what-is-the-distribution-of-the-courses-across-subject-codes">What is the distribution of the courses across subject codes?</h2>
 <p><pre>
 <span class="comment">// TODO: replace with code that computes the actual result</span>
-<span class="keyword">return</span> {<span class="string">&quot;HIST&quot;</span>: <span class="number">78</span>,<span class="string">&quot;HONR&quot;</span>: <span class="number">20</span>,<span class="string">&quot;HUMN&quot;</span>: <span class="number">17</span>,<span class="string">&quot;IAFS&quot;</span>: <span class="number">20</span>,<span class="string">&quot;IPHY&quot;</span>: <span class="number">134</span>}
+<span class="keyword">var</span> groups = _.groupBy(data, <span class="string">&quot;Subject&quot;</span>)
+<span class="keyword">var</span> result = _.mapValues(groups, <span class="keyword">function</span>(n){
+    <span class="keyword">return</span> n.length
+})
+<span class="keyword">return</span> result
+<span class="comment">//return {&quot;HIST&quot;: 78,&quot;HONR&quot;: 20,&quot;HUMN&quot;: 17,&quot;IAFS&quot;: 20,&quot;IPHY&quot;: 134}</span>
 </pre></p>
 <table>
 
@@ -689,18 +699,560 @@
         <td>134</td>
     </tr>
 
+    <tr>
+        <td>LING</td>
+        <td>33</td>
+    </tr>
+
+    <tr>
+        <td>MATH</td>
+        <td>232</td>
+    </tr>
+
+    <tr>
+        <td>MCDB</td>
+        <td>117</td>
+    </tr>
+
+    <tr>
+        <td>BAKR</td>
+        <td>3</td>
+    </tr>
+
+    <tr>
+        <td>PHIL</td>
+        <td>160</td>
+    </tr>
+
+    <tr>
+        <td>PHYS</td>
+        <td>76</td>
+    </tr>
+
+    <tr>
+        <td>PSCI</td>
+        <td>117</td>
+    </tr>
+
+    <tr>
+        <td>NRSC</td>
+        <td>17</td>
+    </tr>
+
+    <tr>
+        <td>PSYC</td>
+        <td>123</td>
+    </tr>
+
+    <tr>
+        <td>WRTG</td>
+        <td>402</td>
+    </tr>
+
+    <tr>
+        <td>RLST</td>
+        <td>24</td>
+    </tr>
+
+    <tr>
+        <td>SLHS</td>
+        <td>70</td>
+    </tr>
+
+    <tr>
+        <td>SOCY</td>
+        <td>136</td>
+    </tr>
+
+    <tr>
+        <td>ARAB</td>
+        <td>10</td>
+    </tr>
+
+    <tr>
+        <td>PORT</td>
+        <td>7</td>
+    </tr>
+
+    <tr>
+        <td>SPAN</td>
+        <td>162</td>
+    </tr>
+
+    <tr>
+        <td>COMR</td>
+        <td>12</td>
+    </tr>
+
+    <tr>
+        <td>FARR</td>
+        <td>20</td>
+    </tr>
+
+    <tr>
+        <td>GSAP</td>
+        <td>3</td>
+    </tr>
+
+    <tr>
+        <td>INVS</td>
+        <td>11</td>
+    </tr>
+
+    <tr>
+        <td>PACS</td>
+        <td>4</td>
+    </tr>
+
+    <tr>
+        <td>SEWL</td>
+        <td>8</td>
+    </tr>
+
+    <tr>
+        <td>DNCE</td>
+        <td>62</td>
+    </tr>
+
+    <tr>
+        <td>THTR</td>
+        <td>66</td>
+    </tr>
+
+    <tr>
+        <td>WMST</td>
+        <td>29</td>
+    </tr>
+
+    <tr>
+        <td>ACCT</td>
+        <td>45</td>
+    </tr>
+
+    <tr>
+        <td>BADM</td>
+        <td>31</td>
+    </tr>
+
+    <tr>
+        <td>BCOR</td>
+        <td>53</td>
+    </tr>
+
+    <tr>
+        <td>BSLW</td>
+        <td>3</td>
+    </tr>
+
+    <tr>
+        <td>BUSM</td>
+        <td>3</td>
+    </tr>
+
+    <tr>
+        <td>CESR</td>
+        <td>7</td>
+    </tr>
+
+    <tr>
+        <td>ESBM</td>
+        <td>24</td>
+    </tr>
+
+    <tr>
+        <td>FNCE</td>
+        <td>44</td>
+    </tr>
+
+    <tr>
+        <td>INBU</td>
+        <td>7</td>
+    </tr>
+
+    <tr>
+        <td>MBAC</td>
+        <td>20</td>
+    </tr>
+
+    <tr>
+        <td>MBAX</td>
+        <td>34</td>
+    </tr>
+
+    <tr>
+        <td>MGMT</td>
+        <td>57</td>
+    </tr>
+
+    <tr>
+        <td>MKTG</td>
+        <td>37</td>
+    </tr>
+
+    <tr>
+        <td>REAL</td>
+        <td>12</td>
+    </tr>
+
+    <tr>
+        <td>EDUC</td>
+        <td>139</td>
+    </tr>
+
+    <tr>
+        <td>ASEN</td>
+        <td>48</td>
+    </tr>
+
+    <tr>
+        <td>CHEN</td>
+        <td>49</td>
+    </tr>
+
+    <tr>
+        <td>CSCI</td>
+        <td>63</td>
+    </tr>
+
+    <tr>
+        <td>AREN</td>
+        <td>23</td>
+    </tr>
+
+    <tr>
+        <td>CVEN</td>
+        <td>77</td>
+    </tr>
+
+    <tr>
+        <td>ECEN</td>
+        <td>67</td>
+    </tr>
+
+    <tr>
+        <td>EMEN</td>
+        <td>23</td>
+    </tr>
+
+    <tr>
+        <td>EHON</td>
+        <td>5</td>
+    </tr>
+
+    <tr>
+        <td>GEEN</td>
+        <td>65</td>
+    </tr>
+
+    <tr>
+        <td>EVEN</td>
+        <td>2</td>
+    </tr>
+
+    <tr>
+        <td>HUEN</td>
+        <td>37</td>
+    </tr>
+
+    <tr>
+        <td>MCEN</td>
+        <td>90</td>
+    </tr>
+
+    <tr>
+        <td>TLEN</td>
+        <td>24</td>
+    </tr>
+
+    <tr>
+        <td>ATLS</td>
+        <td>44</td>
+    </tr>
+
+    <tr>
+        <td>MUSM</td>
+        <td>5</td>
+    </tr>
+
+    <tr>
+        <td>RSEI</td>
+        <td>2</td>
+    </tr>
+
+    <tr>
+        <td>JOUR</td>
+        <td>96</td>
+    </tr>
+
+    <tr>
+        <td>LAWS</td>
+        <td>176</td>
+    </tr>
+
+    <tr>
+        <td>CONV</td>
+        <td>2</td>
+    </tr>
+
+    <tr>
+        <td>EMUS</td>
+        <td>42</td>
+    </tr>
+
+    <tr>
+        <td>MUEL</td>
+        <td>44</td>
+    </tr>
+
+    <tr>
+        <td>MUSC</td>
+        <td>95</td>
+    </tr>
+
+    <tr>
+        <td>PMUS</td>
+        <td>56</td>
+    </tr>
+
+    <tr>
+        <td>TMUS</td>
+        <td>2</td>
+    </tr>
+
+    <tr>
+        <td>AIRR</td>
+        <td>12</td>
+    </tr>
+
+    <tr>
+        <td>MILR</td>
+        <td>9</td>
+    </tr>
+
+    <tr>
+        <td>NAVR</td>
+        <td>9</td>
+    </tr>
+
+    <tr>
+        <td>CSVC</td>
+        <td>1</td>
+    </tr>
+
+    <tr>
+        <td>LDSP</td>
+        <td>14</td>
+    </tr>
+
+    <tr>
+        <td>NRLN</td>
+        <td>1</td>
+    </tr>
+
+    <tr>
+        <td>PRLC</td>
+        <td>3</td>
+    </tr>
+
+    <tr>
+        <td>ARCH</td>
+        <td>1</td>
+    </tr>
+
+    <tr>
+        <td>ENVD</td>
+        <td>59</td>
+    </tr>
+
+    <tr>
+        <td>ARTH</td>
+        <td>13</td>
+    </tr>
+
+    <tr>
+        <td>ARTS</td>
+        <td>52</td>
+    </tr>
+
+    <tr>
+        <td>CAMW</td>
+        <td>2</td>
+    </tr>
+
+    <tr>
+        <td>CWCV</td>
+        <td>1</td>
+    </tr>
+
+    <tr>
+        <td>LGBT</td>
+        <td>1</td>
+    </tr>
+
+    <tr>
+        <td>LIBB</td>
+        <td>6</td>
+    </tr>
+
+    <tr>
+        <td>CHIN</td>
+        <td>10</td>
+    </tr>
+
+    <tr>
+        <td>FRSI</td>
+        <td>1</td>
+    </tr>
+
+    <tr>
+        <td>HIND</td>
+        <td>1</td>
+    </tr>
+
+    <tr>
+        <td>JPNS</td>
+        <td>16</td>
+    </tr>
+
+    <tr>
+        <td>KREN</td>
+        <td>3</td>
+    </tr>
+
+    <tr>
+        <td>ANTH</td>
+        <td>53</td>
+    </tr>
+
+    <tr>
+        <td>APPM</td>
+        <td>52</td>
+    </tr>
+
+    <tr>
+        <td>ASTR</td>
+        <td>23</td>
+    </tr>
+
+    <tr>
+        <td>ARSC</td>
+        <td>24</td>
+    </tr>
+
+    <tr>
+        <td>ATOC</td>
+        <td>25</td>
+    </tr>
+
+    <tr>
+        <td>CHEM</td>
+        <td>139</td>
+    </tr>
+
+    <tr>
+        <td>CLAS</td>
+        <td>27</td>
+    </tr>
+
+    <tr>
+        <td>COMM</td>
+        <td>78</td>
+    </tr>
+
+    <tr>
+        <td>EBIO</td>
+        <td>113</td>
+    </tr>
+
+    <tr>
+        <td>ECON</td>
+        <td>61</td>
+    </tr>
+
+    <tr>
+        <td>ENGL</td>
+        <td>125</td>
+    </tr>
+
+    <tr>
+        <td>ENVS</td>
+        <td>20</td>
+    </tr>
+
+    <tr>
+        <td>ETHN</td>
+        <td>22</td>
+    </tr>
+
+    <tr>
+        <td>FILM</td>
+        <td>33</td>
+    </tr>
+
+    <tr>
+        <td>FREN</td>
+        <td>30</td>
+    </tr>
+
+    <tr>
+        <td>ITAL</td>
+        <td>16</td>
+    </tr>
+
+    <tr>
+        <td>GEOG</td>
+        <td>28</td>
+    </tr>
+
+    <tr>
+        <td>GEOL</td>
+        <td>37</td>
+    </tr>
+
+    <tr>
+        <td>GRMN</td>
+        <td>26</td>
+    </tr>
+
+    <tr>
+        <td>HEBR</td>
+        <td>5</td>
+    </tr>
+
+    <tr>
+        <td>RUSS</td>
+        <td>16</td>
+    </tr>
+
+    <tr>
+        <td>SCAN</td>
+        <td>4</td>
+    </tr>
+
+    <tr>
+        <td>SWED</td>
+        <td>1</td>
+    </tr>
+
+    <tr>
+        <td>LEAD</td>
+        <td>1</td>
+    </tr>
+
 </table>
 
 <h2 id="what-subset-of-these-subject-codes-have-more-than-100-courses">What subset of these subject codes have more than 100 courses?</h2>
 <p><pre>
 <span class="comment">// TODO: replace with code that computes the actual result</span>
+
 <span class="keyword">var</span> grps = _.groupBy(data, <span class="string">&apos;Subject&apos;</span>)
-<span class="keyword">var</span> ret = _.pick(_.mapValues(grps, <span class="keyword">function</span>(d){
+<span class="keyword">var</span> result = _.pick(_.mapValues(grps, <span class="keyword">function</span>(d){
     <span class="keyword">return</span> d.length
 }), <span class="keyword">function</span>(x){
     <span class="keyword">return</span> x &gt; <span class="number">100</span>
 })
-<span class="keyword">return</span> {<span class="string">&quot;IPHY&quot;</span>: <span class="number">134</span>,<span class="string">&quot;MATH&quot;</span>: <span class="number">232</span>,<span class="string">&quot;MCDB&quot;</span>: <span class="number">117</span>,<span class="string">&quot;PHIL&quot;</span>: <span class="number">160</span>,<span class="string">&quot;PSCI&quot;</span>: <span class="number">117</span>}
+<span class="keyword">return</span> result
+<span class="comment">/*return {&quot;IPHY&quot;: 134,&quot;MATH&quot;: 232,&quot;MCDB&quot;: 117,&quot;PHIL&quot;: 160,&quot;PSCI&quot;: 117}*/</span>
 </pre></p>
 <table>
 
@@ -729,12 +1281,66 @@
         <td>117</td>
     </tr>
 
+    <tr>
+        <td>PSYC</td>
+        <td>123</td>
+    </tr>
+
+    <tr>
+        <td>WRTG</td>
+        <td>402</td>
+    </tr>
+
+    <tr>
+        <td>SOCY</td>
+        <td>136</td>
+    </tr>
+
+    <tr>
+        <td>SPAN</td>
+        <td>162</td>
+    </tr>
+
+    <tr>
+        <td>EDUC</td>
+        <td>139</td>
+    </tr>
+
+    <tr>
+        <td>LAWS</td>
+        <td>176</td>
+    </tr>
+
+    <tr>
+        <td>CHEM</td>
+        <td>139</td>
+    </tr>
+
+    <tr>
+        <td>EBIO</td>
+        <td>113</td>
+    </tr>
+
+    <tr>
+        <td>ENGL</td>
+        <td>125</td>
+    </tr>
+
 </table>
 
 <h2 id="what-subset-of-these-subject-codes-have-more-than-5000-total-enrollments">What subset of these subject codes have more than 5000 total enrollments?</h2>
 <p><pre>
 <span class="comment">// TODO: replace with code that computes the actual result</span>
-<span class="keyword">return</span> {<span class="string">&quot;IPHY&quot;</span>: <span class="number">5507</span>,<span class="string">&quot;MATH&quot;</span>: <span class="number">8725</span>,<span class="string">&quot;PHIL&quot;</span>: <span class="number">5672</span>,<span class="string">&quot;PHYS&quot;</span>: <span class="number">8099</span>,<span class="string">&quot;PSCI&quot;</span>: <span class="number">5491</span>}
+
+<span class="keyword">var</span> groups = _.groupBy(data, <span class="string">&apos;Subject&apos;</span>)
+<span class="keyword">var</span> result = _.pick(_.mapValues(groups, <span class="keyword">function</span>(d){
+    <span class="keyword">var</span> a = _.pluck(d, <span class="string">&apos;N.ENROLL&apos;</span>)
+    <span class="keyword">return</span> _.sum(a)
+}), <span class="keyword">function</span>(x){
+        <span class="keyword">return</span> x &gt; <span class="number">5000</span>
+})
+<span class="keyword">return</span> result
+<span class="comment">/*return {&quot;IPHY&quot;: 5507,&quot;MATH&quot;: 8725,&quot;PHIL&quot;: 5672,&quot;PHYS&quot;: 8099,&quot;PSCI&quot;: 5491}*/</span>
 </pre></p>
 <table>
 
@@ -763,14 +1369,54 @@
         <td>5491</td>
     </tr>
 
+    <tr>
+        <td>PSYC</td>
+        <td>8477</td>
+    </tr>
+
+    <tr>
+        <td>WRTG</td>
+        <td>7185</td>
+    </tr>
+
+    <tr>
+        <td>SOCY</td>
+        <td>7932</td>
+    </tr>
+
+    <tr>
+        <td>BCOR</td>
+        <td>6852</td>
+    </tr>
+
+    <tr>
+        <td>LAWS</td>
+        <td>5166</td>
+    </tr>
+
 </table>
 
 <h2 id="what-are-the-course-numbers-of-the-courses-tom-pei-hsiu-yeh-taught">What are the course numbers of the courses Tom (PEI HSIU) Yeh taught?</h2>
 <p><pre>
 <span class="comment">// TODO: replace with code that computes the actual result</span>
-<span class="keyword">return</span> [<span class="string">&apos;4830&apos;</span>,<span class="string">&apos;4830&apos;</span>]
-</pre></p>
-<p>They are 4830,4830.</p>
+<span class="keyword">var</span> groups = _.groupBy(O, <span class="string">&quot;Instructors&quot;</span>)
+<span class="keyword">var</span> result = _.pick(_.mapValues(grps, <span class="keyword">function</span>(d){
+    <span class="keyword">return</span> _.pluck(d, <span class="string">&quot;CourseTitle&quot;</span>)
+}))
+<span class="keyword">return</span> result
+<span class="comment">//return [&apos;4830&apos;,&apos;4830&apos;]</span>
+</pre><div class="console error">ReferenceError: O is not defined
+    at Object.eval (eval at <anonymous> (C:\users\ming\Documents\CSCI4730bigdata\main\book\node_modules\gitbook-plugin-bigdata\index.js:49:29), <anonymous>:5:24)
+    at Object.module.exports.blocks.lodash.process (C:\users\ming\Documents\CSCI4730bigdata\main\book\node_modules\gitbook-plugin-bigdata\index.js:53:37)
+    at null.<anonymous> (C:\Users\ming\.gitbook\versions\2.2.0\lib\template.js:136:21)
+    at C:\Users\ming\.gitbook\versions\2.2.0\lib\template.js:267:29
+    at _fulfilled (C:\Users\ming\.gitbook\versions\2.2.0\node_modules\q\q.js:787:54)
+    at self.promiseDispatch.done (C:\Users\ming\.gitbook\versions\2.2.0\node_modules\q\q.js:816:30)
+    at Promise.promise.promiseDispatch (C:\Users\ming\.gitbook\versions\2.2.0\node_modules\q\q.js:749:13)
+    at C:\Users\ming\.gitbook\versions\2.2.0\node_modules\q\q.js:810:14
+    at flush (C:\Users\ming\.gitbook\versions\2.2.0\node_modules\q\q.js:108:17)
+    at process._tickCallback (node.js:355:11)</anonymous></anonymous></anonymous></div></p>
+<p>They are .</p>
 
                     
                     </section>
