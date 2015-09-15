@@ -21,9 +21,11 @@ different perspective than the raw data, providing a visual insight into the dat
 
 # (Question 1)
 
-![screenshot](qs1.PNG)
+![screenshot](Q1.png)
 
 THE ANSWER IS 21 SAME AS DOING WITH LODASH, AND IF YOU LOOK AT THE LONGER HORIZONTAL, IT CLEARLY SHOW IT IS 21.
+Sorry! I don't know why the picture is not showing. So I provide here's a github link to the picture. 
+https://github.com/Malaokia/book/blob/master/learning/week2/Q1.png
 
 # (Question 2)
 
