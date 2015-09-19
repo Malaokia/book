@@ -48,7 +48,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="2.3.1" data-basepath="../.." data-revision="Mon Sep 14 2015 20:45:27 GMT-0600 (Mountain Daylight Time)">
+    <div class="book" data-level="2.3.1" data-basepath="../.." data-revision="Fri Sep 18 2015 19:45:56 GMT-0600 (Mountain Daylight Time)">
     
 
 <div class="book-summary">
@@ -318,6 +318,57 @@
                             <b>1.4.3.</b>
                         
                         Lodash GroupBy
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="learning/week4/index.html">
+            
+                
+                    <a href="../../learning/week4/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        Week 4
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="learning/week4/report.html">
+            
+                
+                    <a href="../../learning/week4/report.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.1.</b>
+                        
+                        FCQ Report
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="learning/week4/viz.html">
+            
+                
+                    <a href="../../learning/week4/viz.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.2.</b>
+                        
+                        FCQ Viz
                     </a>
             
             
@@ -1337,7 +1388,7 @@
     <span class="keyword">var</span> a = _.pluck(d, <span class="string">&apos;N.ENROLL&apos;</span>)
     <span class="keyword">return</span> _.sum(a)
 }), <span class="keyword">function</span>(x){
-        <span class="keyword">return</span> x &gt; <span class="number">5000</span>
+        <span class="keyword">return</span> x &gt; <span class="number">5000</span> 
 })
 <span class="keyword">return</span> result
 <span class="comment">/*return {&quot;IPHY&quot;: 5507,&quot;MATH&quot;: 8725,&quot;PHIL&quot;: 5672,&quot;PHYS&quot;: 8099,&quot;PSCI&quot;: 5491}*/</span>
@@ -1399,24 +1450,16 @@
 <h2 id="what-are-the-course-numbers-of-the-courses-tom-pei-hsiu-yeh-taught">What are the course numbers of the courses Tom (PEI HSIU) Yeh taught?</h2>
 <p><pre>
 <span class="comment">// TODO: replace with code that computes the actual result</span>
-<span class="keyword">var</span> groups = _.groupBy(O, <span class="string">&quot;Instructors&quot;</span>)
-<span class="keyword">var</span> result = _.pick(_.mapValues(grps, <span class="keyword">function</span>(d){
-    <span class="keyword">return</span> _.pluck(d, <span class="string">&quot;CourseTitle&quot;</span>)
-}))
-<span class="keyword">return</span> result
+<span class="keyword">var</span> result = _.filter(data,<span class="keyword">function</span>(d){
+   x = _.where(d[<span class="string">&apos;Instructors&apos;</span>], { <span class="string">&apos;name&apos;</span>: <span class="string">&quot;YEH, PEI HSIU&quot;</span> });
+  
+   <span class="keyword">return</span> _.size(x);
+});
+<span class="keyword">return</span> _.pluck(result,<span class="string">&quot;Course&quot;</span>)
 <span class="comment">//return [&apos;4830&apos;,&apos;4830&apos;]</span>
-</pre><div class="console error">ReferenceError: O is not defined
-    at Object.eval (eval at <anonymous> (C:\Users\ming\Documents\CSCI4730bigdata\main\book\node_modules\gitbook-plugin-bigdata\index.js:49:29), <anonymous>:5:24)
-    at Object.module.exports.blocks.lodash.process (C:\Users\ming\Documents\CSCI4730bigdata\main\book\node_modules\gitbook-plugin-bigdata\index.js:53:37)
-    at null.<anonymous> (C:\Users\ming\.gitbook\versions\2.2.0\lib\template.js:136:21)
-    at C:\Users\ming\.gitbook\versions\2.2.0\lib\template.js:267:29
-    at _fulfilled (C:\Users\ming\.gitbook\versions\2.2.0\node_modules\q\q.js:787:54)
-    at self.promiseDispatch.done (C:\Users\ming\.gitbook\versions\2.2.0\node_modules\q\q.js:816:30)
-    at Promise.promise.promiseDispatch (C:\Users\ming\.gitbook\versions\2.2.0\node_modules\q\q.js:749:13)
-    at C:\Users\ming\.gitbook\versions\2.2.0\node_modules\q\q.js:810:14
-    at flush (C:\Users\ming\.gitbook\versions\2.2.0\node_modules\q\q.js:108:17)
-    at process._tickCallback (node.js:355:11)</anonymous></anonymous></anonymous></div></p>
-<p>They are .</p>
+
+</pre></p>
+<p>They are 4830,4830.</p>
 
                     
                     </section>

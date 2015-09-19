@@ -83,7 +83,7 @@ var result = _.pick(_.mapValues(groups, function(d){
     var a = _.pluck(d, 'N.ENROLL')
     return _.sum(a)
 }), function(x){
-        return x > 5000
+        return x > 5000 
 })
 return result
 /*return {"IPHY": 5507,"MATH": 8725,"PHIL": 5672,"PHYS": 8099,"PSCI": 5491}*/
@@ -98,16 +98,19 @@ return result
 {% endfor %}
 </table>
 
-## What are the course numbers of the courses Tom (PEI HSIU) Yeh taught?
+## What are the course numbers of the courses Tom (PEI HSIU) Yeh taught? 
 
 {% lodash %}
 // TODO: replace with code that computes the actual result
-var groups = _.groupBy(O, "Instructors")
-var result = _.pick(_.mapValues(grps, function(d){
-    return _.pluck(d, "CourseTitle")
-}))
-return result
+var result = _.filter(data,function(d){
+   x = _.where(d['Instructors'], { 'name': "YEH, PEI HSIU" });
+  
+   return _.size(x);
+});
+return _.pluck(result,"Course")
 //return ['4830','4830']
+
 {% endlodash %}
 
 They are {{result}}.
+
