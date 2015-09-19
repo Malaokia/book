@@ -5,7 +5,7 @@
         <!-- head:start -->
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>FCQ | book</title>
+        <title>FCQ Report | book</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.2.0">
@@ -37,10 +37,10 @@
         
     
     
-    <link rel="next" href="../../hackathons/fcq/warmup.html" />
+    <link rel="next" href="../../learning/week4/viz.html" />
     
     
-    <link rel="prev" href="../../hackathons/classmates/report.html" />
+    <link rel="prev" href="../../learning/week4/index.html" />
     
 
         <!-- head:end -->
@@ -48,7 +48,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="2.3" data-basepath="../.." data-revision="Fri Sep 18 2015 19:45:56 GMT-0600 (Mountain Daylight Time)">
+    <div class="book" data-level="1.5.1" data-basepath="../.." data-revision="Fri Sep 18 2015 19:45:56 GMT-0600 (Mountain Daylight Time)">
     
 
 <div class="book-summary">
@@ -344,7 +344,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="learning/week4/report.html">
+        <li class="chapter active" data-level="1.5.1" data-path="learning/week4/report.html">
             
                 
                     <a href="../../learning/week4/report.html">
@@ -532,7 +532,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.3" data-path="hackathons/fcq/index.html">
+        <li class="chapter " data-level="2.3" data-path="hackathons/fcq/index.html">
             
                 
                     <a href="../../hackathons/fcq/index.html">
@@ -694,129 +694,805 @@
                     <section class="normal" id="section-">
                     
                         <p></p>
-<h1 id="fcq">FCQ</h1>
-<p>The objective of today&apos;s hackathon is to produce a data-driven report
-to provide some insight into the FCQ data. We&apos;ve prepared a slice of the dataset.
-There are 5000 records in this slice.</p>
-<p>The first record looks like</p>
+<h1 id="report">Report</h1>
+<p>As a team, answer all the questions the team&apos;s members submitted on our
+<a href="https://github.com/bigdatahci2015/forum/issues/14" target="_blank">course forum</a>. Each
+team member is responsible for one question. But everyone should work together
+to come up with a good solution. Your answer should consist of Lodash code
+and a brief writeup. Utilize <code>_.map</code>, <code>_.filter</code>, <code>_.group</code> ...etc. Do not
+use any for loop.</p>
+<p>It is important for everyone to understand all the solutions and make sure you
+will be able to independently reproduce these solutions when asked to do so.
+Coming up, we will incorporate variations of these questions into a future hackathon
+ and you are expected to be capable of reproducing and adapting your solutions.</p>
+<h1 id="which-course-has-the-highest-enrollment-by-andrew">Which course has the highest enrollment?  by Andrew</h1>
+<p><pre>
+</pre></p>
+<h1 id="how-many-instructors-have-taught-each-subject-by-kari">How many instructors have taught each subject?  by Kari</h1>
+<p><pre>
+
+<span class="keyword">var</span> group = _.groupBy(data, <span class="string">&quot;Subject&quot;</span>)
+
+<span class="keyword">var</span> result = _.mapValues(group, <span class="keyword">function</span>(n){
+    <span class="keyword">var</span> S = _.pluck(n, <span class="string">&quot;Instructors&quot;</span>)
+    <span class="keyword">return</span> _.size(_.uniq(_.flatten(_.map(S, <span class="keyword">function</span>(x){
+        <span class="keyword">return</span> _.pluck(x,<span class="string">&quot;name&quot;</span>)
+    }))))
+})
+<span class="keyword">return</span> result 
+</pre></p>
+<table>
+
+    <tr>
+        <td>HIST</td>
+        <td>45</td>
+    </tr>
+
+    <tr>
+        <td>HONR</td>
+        <td>10</td>
+    </tr>
+
+    <tr>
+        <td>HUMN</td>
+        <td>13</td>
+    </tr>
+
+    <tr>
+        <td>IAFS</td>
+        <td>16</td>
+    </tr>
+
+    <tr>
+        <td>IPHY</td>
+        <td>34</td>
+    </tr>
+
+    <tr>
+        <td>LING</td>
+        <td>19</td>
+    </tr>
+
+    <tr>
+        <td>MATH</td>
+        <td>61</td>
+    </tr>
+
+    <tr>
+        <td>MCDB</td>
+        <td>32</td>
+    </tr>
+
+    <tr>
+        <td>BAKR</td>
+        <td>3</td>
+    </tr>
+
+    <tr>
+        <td>PHIL</td>
+        <td>48</td>
+    </tr>
+
+    <tr>
+        <td>PHYS</td>
+        <td>54</td>
+    </tr>
+
+    <tr>
+        <td>PSCI</td>
+        <td>47</td>
+    </tr>
+
+    <tr>
+        <td>NRSC</td>
+        <td>9</td>
+    </tr>
+
+    <tr>
+        <td>PSYC</td>
+        <td>47</td>
+    </tr>
+
+    <tr>
+        <td>WRTG</td>
+        <td>85</td>
+    </tr>
+
+    <tr>
+        <td>RLST</td>
+        <td>13</td>
+    </tr>
+
+    <tr>
+        <td>SLHS</td>
+        <td>28</td>
+    </tr>
+
+    <tr>
+        <td>SOCY</td>
+        <td>58</td>
+    </tr>
+
+    <tr>
+        <td>ARAB</td>
+        <td>3</td>
+    </tr>
+
+    <tr>
+        <td>PORT</td>
+        <td>2</td>
+    </tr>
+
+    <tr>
+        <td>SPAN</td>
+        <td>62</td>
+    </tr>
+
+    <tr>
+        <td>COMR</td>
+        <td>4</td>
+    </tr>
+
+    <tr>
+        <td>FARR</td>
+        <td>8</td>
+    </tr>
+
+    <tr>
+        <td>GSAP</td>
+        <td>2</td>
+    </tr>
+
+    <tr>
+        <td>INVS</td>
+        <td>5</td>
+    </tr>
+
+    <tr>
+        <td>PACS</td>
+        <td>2</td>
+    </tr>
+
+    <tr>
+        <td>SEWL</td>
+        <td>3</td>
+    </tr>
+
+    <tr>
+        <td>DNCE</td>
+        <td>31</td>
+    </tr>
+
+    <tr>
+        <td>THTR</td>
+        <td>31</td>
+    </tr>
+
+    <tr>
+        <td>WMST</td>
+        <td>14</td>
+    </tr>
+
+    <tr>
+        <td>ACCT</td>
+        <td>17</td>
+    </tr>
+
+    <tr>
+        <td>BADM</td>
+        <td>16</td>
+    </tr>
+
+    <tr>
+        <td>BCOR</td>
+        <td>23</td>
+    </tr>
+
+    <tr>
+        <td>BSLW</td>
+        <td>1</td>
+    </tr>
+
+    <tr>
+        <td>BUSM</td>
+        <td>5</td>
+    </tr>
+
+    <tr>
+        <td>CESR</td>
+        <td>5</td>
+    </tr>
+
+    <tr>
+        <td>ESBM</td>
+        <td>13</td>
+    </tr>
+
+    <tr>
+        <td>FNCE</td>
+        <td>16</td>
+    </tr>
+
+    <tr>
+        <td>INBU</td>
+        <td>3</td>
+    </tr>
+
+    <tr>
+        <td>MBAC</td>
+        <td>11</td>
+    </tr>
+
+    <tr>
+        <td>MBAX</td>
+        <td>26</td>
+    </tr>
+
+    <tr>
+        <td>MGMT</td>
+        <td>28</td>
+    </tr>
+
+    <tr>
+        <td>MKTG</td>
+        <td>20</td>
+    </tr>
+
+    <tr>
+        <td>REAL</td>
+        <td>3</td>
+    </tr>
+
+    <tr>
+        <td>EDUC</td>
+        <td>75</td>
+    </tr>
+
+    <tr>
+        <td>ASEN</td>
+        <td>38</td>
+    </tr>
+
+    <tr>
+        <td>CHEN</td>
+        <td>21</td>
+    </tr>
+
+    <tr>
+        <td>CSCI</td>
+        <td>34</td>
+    </tr>
+
+    <tr>
+        <td>AREN</td>
+        <td>18</td>
+    </tr>
+
+    <tr>
+        <td>CVEN</td>
+        <td>40</td>
+    </tr>
+
+    <tr>
+        <td>ECEN</td>
+        <td>37</td>
+    </tr>
+
+    <tr>
+        <td>EMEN</td>
+        <td>9</td>
+    </tr>
+
+    <tr>
+        <td>EHON</td>
+        <td>2</td>
+    </tr>
+
+    <tr>
+        <td>GEEN</td>
+        <td>44</td>
+    </tr>
+
+    <tr>
+        <td>EVEN</td>
+        <td>2</td>
+    </tr>
+
+    <tr>
+        <td>HUEN</td>
+        <td>11</td>
+    </tr>
+
+    <tr>
+        <td>MCEN</td>
+        <td>48</td>
+    </tr>
+
+    <tr>
+        <td>TLEN</td>
+        <td>19</td>
+    </tr>
+
+    <tr>
+        <td>ATLS</td>
+        <td>18</td>
+    </tr>
+
+    <tr>
+        <td>MUSM</td>
+        <td>5</td>
+    </tr>
+
+    <tr>
+        <td>RSEI</td>
+        <td>1</td>
+    </tr>
+
+    <tr>
+        <td>JOUR</td>
+        <td>52</td>
+    </tr>
+
+    <tr>
+        <td>LAWS</td>
+        <td>89</td>
+    </tr>
+
+    <tr>
+        <td>CONV</td>
+        <td>2</td>
+    </tr>
+
+    <tr>
+        <td>EMUS</td>
+        <td>19</td>
+    </tr>
+
+    <tr>
+        <td>MUEL</td>
+        <td>25</td>
+    </tr>
+
+    <tr>
+        <td>MUSC</td>
+        <td>50</td>
+    </tr>
+
+    <tr>
+        <td>PMUS</td>
+        <td>31</td>
+    </tr>
+
+    <tr>
+        <td>TMUS</td>
+        <td>1</td>
+    </tr>
+
+    <tr>
+        <td>AIRR</td>
+        <td>5</td>
+    </tr>
+
+    <tr>
+        <td>MILR</td>
+        <td>5</td>
+    </tr>
+
+    <tr>
+        <td>NAVR</td>
+        <td>6</td>
+    </tr>
+
+    <tr>
+        <td>CSVC</td>
+        <td>2</td>
+    </tr>
+
+    <tr>
+        <td>LDSP</td>
+        <td>9</td>
+    </tr>
+
+    <tr>
+        <td>NRLN</td>
+        <td>1</td>
+    </tr>
+
+    <tr>
+        <td>PRLC</td>
+        <td>3</td>
+    </tr>
+
+    <tr>
+        <td>ARCH</td>
+        <td>1</td>
+    </tr>
+
+    <tr>
+        <td>ENVD</td>
+        <td>35</td>
+    </tr>
+
+    <tr>
+        <td>ARTH</td>
+        <td>10</td>
+    </tr>
+
+    <tr>
+        <td>ARTS</td>
+        <td>40</td>
+    </tr>
+
+    <tr>
+        <td>CAMW</td>
+        <td>2</td>
+    </tr>
+
+    <tr>
+        <td>CWCV</td>
+        <td>1</td>
+    </tr>
+
+    <tr>
+        <td>LGBT</td>
+        <td>1</td>
+    </tr>
+
+    <tr>
+        <td>LIBB</td>
+        <td>3</td>
+    </tr>
+
+    <tr>
+        <td>CHIN</td>
+        <td>6</td>
+    </tr>
+
+    <tr>
+        <td>FRSI</td>
+        <td>1</td>
+    </tr>
+
+    <tr>
+        <td>HIND</td>
+        <td>1</td>
+    </tr>
+
+    <tr>
+        <td>JPNS</td>
+        <td>7</td>
+    </tr>
+
+    <tr>
+        <td>KREN</td>
+        <td>1</td>
+    </tr>
+
+    <tr>
+        <td>ANTH</td>
+        <td>23</td>
+    </tr>
+
+    <tr>
+        <td>APPM</td>
+        <td>28</td>
+    </tr>
+
+    <tr>
+        <td>ASTR</td>
+        <td>21</td>
+    </tr>
+
+    <tr>
+        <td>ARSC</td>
+        <td>20</td>
+    </tr>
+
+    <tr>
+        <td>ATOC</td>
+        <td>19</td>
+    </tr>
+
+    <tr>
+        <td>CHEM</td>
+        <td>34</td>
+    </tr>
+
+    <tr>
+        <td>CLAS</td>
+        <td>16</td>
+    </tr>
+
+    <tr>
+        <td>COMM</td>
+        <td>35</td>
+    </tr>
+
+    <tr>
+        <td>EBIO</td>
+        <td>35</td>
+    </tr>
+
+    <tr>
+        <td>ECON</td>
+        <td>48</td>
+    </tr>
+
+    <tr>
+        <td>ENGL</td>
+        <td>72</td>
+    </tr>
+
+    <tr>
+        <td>ENVS</td>
+        <td>16</td>
+    </tr>
+
+    <tr>
+        <td>ETHN</td>
+        <td>16</td>
+    </tr>
+
+    <tr>
+        <td>FILM</td>
+        <td>23</td>
+    </tr>
+
+    <tr>
+        <td>FREN</td>
+        <td>23</td>
+    </tr>
+
+    <tr>
+        <td>ITAL</td>
+        <td>9</td>
+    </tr>
+
+    <tr>
+        <td>GEOG</td>
+        <td>22</td>
+    </tr>
+
+    <tr>
+        <td>GEOL</td>
+        <td>30</td>
+    </tr>
+
+    <tr>
+        <td>GRMN</td>
+        <td>20</td>
+    </tr>
+
+    <tr>
+        <td>HEBR</td>
+        <td>3</td>
+    </tr>
+
+    <tr>
+        <td>RUSS</td>
+        <td>10</td>
+    </tr>
+
+    <tr>
+        <td>SCAN</td>
+        <td>2</td>
+    </tr>
+
+    <tr>
+        <td>SWED</td>
+        <td>1</td>
+    </tr>
+
+    <tr>
+        <td>LEAD</td>
+        <td>1</td>
+    </tr>
+
+</table>
+
+<h1 id="does-the-instructors-tends-to-give-out-higher-grades-if-they-teach-more-classes-or-the-reverse-by-ming">Does the instructors tends to give out higher grades if they teach more classes? or the reverse?  by Ming</h1>
+<p><pre>
+
+<span class="keyword">var</span> graded = _.filter(data,<span class="keyword">function</span>(d){
+  <span class="keyword">return</span> d.hasOwnProperty(<span class="string">&quot;AVG_GRD&quot;</span>);
+})
+<span class="keyword">var</span> smallData = _.map(graded, <span class="keyword">function</span>(d){
+  <span class="keyword">var</span> avg_grd = d.AVG_GRD;
+  <span class="keyword">var</span> nameArr = _.pluck(d.Instructors, <span class="string">&apos;name&apos;</span>);
+  <span class="keyword">var</span> objArray = _.map(nameArr, <span class="keyword">function</span>(d){
+    <span class="keyword">var</span> obj = {name:d,AVG_GRD:avg_grd};
+    <span class="keyword">return</span> obj;
+  })
+  <span class="keyword">return</span> objArray;
+});
+
+<span class="keyword">var</span> groups = _.groupBy(_.flatten(smallData),<span class="string">&apos;name&apos;</span>);
+<span class="keyword">var</span> groups2 = _.map(groups, <span class="keyword">function</span>(d){
+  <span class="keyword">var</span> avg = _.reduce(d, <span class="keyword">function</span>(total,e){
+    <span class="keyword">return</span> total+e.AVG_GRD;
+  },<span class="number">0</span>)/_.size(d);
+  <span class="keyword">var</span> obj = {classcount:_.size(d),AVG_GRD:avg,name:_.first(d).name}
+  <span class="keyword">return</span> obj;
+});
+<span class="keyword">var</span> groups3 = _.groupBy(groups2,<span class="string">&apos;classcount&apos;</span>);
+
+<span class="keyword">var</span> avgbyCount = _.mapValues(groups3, <span class="keyword">function</span>(d){
+  <span class="keyword">var</span> avg = _.reduce(d, <span class="keyword">function</span>(total,e){
+    <span class="keyword">return</span> total+e.AVG_GRD;
+  },<span class="number">0</span>)/_.size(d);
+  <span class="keyword">var</span> obj = {classcount:_.first(d).classcount,AVG_GRD:avg,instrCount:_.size(d)}
+  <span class="keyword">return</span> obj;
+});
+<span class="keyword">return</span> avgbyCount
+
+</pre></p>
 <pre style="font-size:11px;line-height:1;max-height:300px;">{
- &quot;AVG_GRD&quot;: 2.98,
- &quot;Activity_Type&quot;: &quot;LEC - Lecture&quot;,
- &quot;AvgCourse&quot;: 5.4,
- &quot;AvgInstructor&quot;: 5.6,
- &quot;Course&quot;: &quot;4808&quot;,
- &quot;CourseTitle&quot;: &quot;Special Topics in World Areas History&quot;,
- &quot;CrsLvlNum&quot;: &quot;4XXX&quot;,
- &quot;CrsPBAColl&quot;: &quot;AS&quot;,
- &quot;CrsPBADept&quot;: &quot;HIST&quot;,
- &quot;CrsPBADiv&quot;: &quot;AH&quot;,
- &quot;Honors&quot;: &quot;0&quot;,
- &quot;Hours&quot;: 3,
- &quot;Instruction_Mode&quot;: &quot;P  - In Person&quot;,
- &quot;Level&quot;: &quot;Upper&quot;,
- &quot;NComb&quot;: 2,
- &quot;NIntrFCQ&quot;: 1,
- &quot;N&quot;: {
-  &quot;ENROLL&quot;: 16,
-  &quot;EOT&quot;: 16,
-  &quot;GRADE&quot;: 16,
-  &quot;INCOMP&quot;: 0,
-  &quot;NOCRED&quot;: 0,
-  &quot;PASS&quot;: 0,
-  &quot;Ret&quot;: 15
+ &quot;1&quot;: {
+  &quot;classcount&quot;: 1,
+  &quot;AVG_GRD&quot;: 3.282425000000004,
+  &quot;instrCount&quot;: 800
  },
- &quot;PCT&quot;: {
-  &quot;A&quot;: 0.31,
-  &quot;B&quot;: 0.5,
-  &quot;C&quot;: 0.12,
-  &quot;C_MINUS_OR_BELOW&quot;: 0.06,
-  &quot;D&quot;: 0,
-  &quot;DF&quot;: 0.06,
-  &quot;F&quot;: 0.06,
-  &quot;GRADE&quot;: 1,
-  &quot;INCOMP&quot;: 0,
-  &quot;WDRAW&quot;: 0
+ &quot;2&quot;: {
+  &quot;classcount&quot;: 2,
+  &quot;AVG_GRD&quot;: 3.2711051829268296,
+  &quot;instrCount&quot;: 656
  },
- &quot;RAP&quot;: &quot;0&quot;,
- &quot;Section&quot;: &quot;001&quot;,
- &quot;Subject&quot;: &quot;HIST&quot;,
- &quot;Subject_Label&quot;: &quot;History&quot;,
- &quot;Workload&quot;: {
-  &quot;Hrs_Wk&quot;: &quot;7-9&quot;,
-  &quot;Raw&quot;: &quot;3.40&quot;
+ &quot;3&quot;: {
+  &quot;classcount&quot;: 3,
+  &quot;AVG_GRD&quot;: 3.30401925391095,
+  &quot;instrCount&quot;: 277
  },
- &quot;YearTerm&quot;: &quot;20137&quot;,
- &quot;Instructors&quot;: [
-  {
-   &quot;group&quot;: &quot;1 TTT&quot;,
-   &quot;name&quot;: &quot;MOJOLA, SANYU AMIMO&quot;,
-   &quot;title&quot;: &quot;ASST PROFESSOR&quot;
-  },
-  {
-   &quot;group&quot;: &quot;1 TTT&quot;,
-   &quot;name&quot;: &quot;OSBORNE, MYLES GREGORY&quot;,
-   &quot;title&quot;: &quot;ASST PROFESSOR&quot;
-  }
- ]
+ &quot;4&quot;: {
+  &quot;classcount&quot;: 4,
+  &quot;AVG_GRD&quot;: 3.213417266187052,
+  &quot;instrCount&quot;: 139
+ },
+ &quot;5&quot;: {
+  &quot;classcount&quot;: 5,
+  &quot;AVG_GRD&quot;: 3.2277377049180327,
+  &quot;instrCount&quot;: 61
+ },
+ &quot;6&quot;: {
+  &quot;classcount&quot;: 6,
+  &quot;AVG_GRD&quot;: 3.1722222222222216,
+  &quot;instrCount&quot;: 69
+ },
+ &quot;7&quot;: {
+  &quot;classcount&quot;: 7,
+  &quot;AVG_GRD&quot;: 3.202216748768473,
+  &quot;instrCount&quot;: 29
+ },
+ &quot;8&quot;: {
+  &quot;classcount&quot;: 8,
+  &quot;AVG_GRD&quot;: 3.10605,
+  &quot;instrCount&quot;: 25
+ },
+ &quot;9&quot;: {
+  &quot;classcount&quot;: 9,
+  &quot;AVG_GRD&quot;: 3.5538095238095244,
+  &quot;instrCount&quot;: 7
+ },
+ &quot;10&quot;: {
+  &quot;classcount&quot;: 10,
+  &quot;AVG_GRD&quot;: 2.717,
+  &quot;instrCount&quot;: 2
+ },
+ &quot;14&quot;: {
+  &quot;classcount&quot;: 14,
+  &quot;AVG_GRD&quot;: 3.4803571428571427,
+  &quot;instrCount&quot;: 2
+ },
+ &quot;15&quot;: {
+  &quot;classcount&quot;: 15,
+  &quot;AVG_GRD&quot;: 3.5316666666666663,
+  &quot;instrCount&quot;: 2
+ },
+ &quot;16&quot;: {
+  &quot;classcount&quot;: 16,
+  &quot;AVG_GRD&quot;: 3.861875,
+  &quot;instrCount&quot;: 1
+ },
+ &quot;20&quot;: {
+  &quot;classcount&quot;: 20,
+  &quot;AVG_GRD&quot;: 3.304500000000001,
+  &quot;instrCount&quot;: 1
+ },
+ &quot;21&quot;: {
+  &quot;classcount&quot;: 21,
+  &quot;AVG_GRD&quot;: 2.5514285714285716,
+  &quot;instrCount&quot;: 1
+ },
+ &quot;22&quot;: {
+  &quot;classcount&quot;: 22,
+  &quot;AVG_GRD&quot;: 3.185000000000001,
+  &quot;instrCount&quot;: 1
+ },
+ &quot;25&quot;: {
+  &quot;classcount&quot;: 25,
+  &quot;AVG_GRD&quot;: 2.9128,
+  &quot;instrCount&quot;: 1
+ },
+ &quot;26&quot;: {
+  &quot;classcount&quot;: 26,
+  &quot;AVG_GRD&quot;: 3.1234615384615387,
+  &quot;instrCount&quot;: 1
+ },
+ &quot;27&quot;: {
+  &quot;classcount&quot;: 27,
+  &quot;AVG_GRD&quot;: 2.906296296296296,
+  &quot;instrCount&quot;: 1
+ },
+ &quot;33&quot;: {
+  &quot;classcount&quot;: 33,
+  &quot;AVG_GRD&quot;: 2.695757575757576,
+  &quot;instrCount&quot;: 1
+ },
+ &quot;39&quot;: {
+  &quot;classcount&quot;: 39,
+  &quot;AVG_GRD&quot;: 2.733589743589744,
+  &quot;instrCount&quot;: 1
+ },
+ &quot;41&quot;: {
+  &quot;classcount&quot;: 41,
+  &quot;AVG_GRD&quot;: 2.599024390243903,
+  &quot;instrCount&quot;: 1
+ },
+ &quot;60&quot;: {
+  &quot;classcount&quot;: 60,
+  &quot;AVG_GRD&quot;: 2.917166666666667,
+  &quot;instrCount&quot;: 1
+ },
+ &quot;64&quot;: {
+  &quot;classcount&quot;: 64,
+  &quot;AVG_GRD&quot;: 2.375000000000001,
+  &quot;instrCount&quot;: 1
+ }
 }</pre>
 
-<h2 id="examples">Examples</h2>
-<p>Study the following examples of aggregate analysis across colleges based
-on the <code>CrsPBAColl</code> field.</p>
-<h3 id="how-many-courses-have-a-valid-college-code">How many courses have a valid college code?</h3>
+<h1 id="which-department-has-the-lowest-enrollment-by-john">Which department has the lowest enrollment?  by John</h1>
 <p><pre>
-<span class="keyword">return</span> _.filter(data, <span class="keyword">function</span>(d){
-            <span class="keyword">return</span> d[<span class="string">&apos;CrsPBAColl&apos;</span>]
-        })    
-</pre></p>
-<p>The answer is 4981.</p>
-<h2 id="what-are-the-unique-college-codes">What are the unique college codes?</h2>
-<p><pre>
-<span class="keyword">return</span> _.compact(_.uniq(_.pluck(data, <span class="string">&apos;CrsPBAColl&apos;</span>)))
-</pre></p>
-<p>They are AS,BU,EB,EN,GR,JR,LW,MB,XX,AP.</p>
-<h2 id="what-is-the-distribution-of-the-courses-across-colleges">What is the distribution of the courses across colleges?</h2>
-<p><pre>
-<span class="keyword">var</span> grps = _.groupBy(data, <span class="string">&apos;CrsPBAColl&apos;</span>)
-<span class="keyword">return</span> _.mapValues(grps, <span class="keyword">function</span>(d){
-    <span class="keyword">return</span> d.length
+<span class="keyword">var</span> group = _.groupBy(data, <span class="string">&quot;CrsPBADept&quot;</span>)
+<span class="keyword">var</span> sum = _.mapValues(group, <span class="keyword">function</span>(n){
+    <span class="keyword">var</span> enroll = _.pluck(n, <span class="string">&quot;N.ENROLL&quot;</span>)
+    <span class="keyword">return</span> _.sum(enroll)
 })
+<span class="keyword">var</span> min = _.min(sum)
+<span class="keyword">var</span> result = _.pick(sum, <span class="keyword">function</span>(x){
+    <span class="keyword">return</span> x == min
+})
+<span class="keyword">return</span> result
 </pre></p>
-<pre style="font-size:11px;line-height:1;max-height:300px;">{
- &quot;AS&quot;: 3237,
- &quot;BU&quot;: 378,
- &quot;EB&quot;: 139,
- &quot;EN&quot;: 573,
- &quot;GR&quot;: 51,
- &quot;JR&quot;: 96,
- &quot;LW&quot;: 176,
- &quot;MB&quot;: 241,
- &quot;XX&quot;: 30,
- &quot;undefined&quot;: 19,
- &quot;AP&quot;: 60
-}</pre>
+<table>
 
-<h2 id="what-are-the-total-student-enrollments-compared-across-colleges">What are the total student enrollments compared across colleges?</h2>
+    <tr>
+        <td>RASE</td>
+        <td>30</td>
+    </tr>
+
+</table>
+
+<h1 id="which-subject-is-most-in-demand-based-on-the-total-number-of-enrollment-by-sussant">Which subject is most in demand,based on the total number of enrollment?  by Sussant</h1>
 <p><pre>
-<span class="keyword">var</span> grps = _.groupBy(data, <span class="string">&apos;CrsPBAColl&apos;</span>)
-<span class="keyword">return</span> _.mapValues(grps, <span class="keyword">function</span>(d){
-    <span class="keyword">var</span> enrollNumbers = _.pluck(d, <span class="string">&apos;N.ENROLL&apos;</span>)
-    <span class="keyword">return</span> _.sum(enrollNumbers)
+<span class="keyword">var</span> group = _.groupBy(data, <span class="string">&quot;Subject&quot;</span>)
+<span class="keyword">var</span> sum = _.mapValues(group, <span class="keyword">function</span>(n){
+    <span class="keyword">var</span> enroll = _.pluck(n, <span class="string">&quot;N.ENROLL&quot;</span>)
+    <span class="keyword">return</span> _.sum(enroll)
 })
+<span class="keyword">var</span> max = _.max(sum)
+<span class="keyword">var</span> result = _.pick(sum, <span class="keyword">function</span>(x){
+    <span class="keyword">return</span> x == max
+})
+<span class="keyword">return</span> result
 </pre></p>
-<pre style="font-size:11px;line-height:1;max-height:300px;">{
- &quot;AS&quot;: 119563,
- &quot;BU&quot;: 17523,
- &quot;EB&quot;: 3198,
- &quot;EN&quot;: 27047,
- &quot;GR&quot;: 1177,
- &quot;JR&quot;: 2982,
- &quot;LW&quot;: 5166,
- &quot;MB&quot;: 7034,
- &quot;XX&quot;: 559,
- &quot;undefined&quot;: 384,
- &quot;AP&quot;: 1400
-}</pre>
+<table>
+
+    <tr>
+        <td>MATH</td>
+        <td>8725</td>
+    </tr>
+
+</table>
+
 
                     
                     </section>
@@ -827,10 +1503,10 @@ on the <code>CrsPBAColl</code> field.</p>
         </div>
 
         
-        <a href="../../hackathons/classmates/report.html" class="navigation navigation-prev " aria-label="Previous page: Report"><i class="fa fa-angle-left"></i></a>
+        <a href="../../learning/week4/index.html" class="navigation navigation-prev " aria-label="Previous page: Week 4"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../hackathons/fcq/warmup.html" class="navigation navigation-next " aria-label="Next page: Warmup"><i class="fa fa-angle-right"></i></a>
+        <a href="../../learning/week4/viz.html" class="navigation navigation-next " aria-label="Next page: FCQ Viz"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
