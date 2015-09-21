@@ -18,7 +18,6 @@ Coming up, we will incorporate variations of these questions into a future hacka
 # Which course has the highest enrollment?  by Andrew
 
 {% lodash %}
-{% lodash %}
 //for course title
 var group = _.groupBy(data, 'CourseTitle');
 var coursesEnroll = _.mapValues(group, function(d){
@@ -40,7 +39,6 @@ return bigClass
     </tr>
 {% endfor %}
 </table>
-{% endlodash %}
 
 
 # How many instructors have taught each subject?  by Kari 

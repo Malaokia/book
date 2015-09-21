@@ -19,37 +19,41 @@ how to transform this JSON file into a format that can be fed into Tableau. As
 a junior and senior, you are expected to be able to look around the Internet
 to problem solve.
 
-# (Question 1)
+# Which course has the highest enrollment?  by Andrew
 
-![screenshot](screenshot.png)
+![screenshot](p1_fcq.png)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+red indicate lower number of enrollment by each individual courses. Because of lapping course title, we can see that first year 
+writing courses although has the only a few number per individual writing course, but the total enrollment that enrolled under
+first year is enormous and is indicated through a dark blue color and the left hand corner.
 
-# (Question 2)
+# How many instructors have taught each subject?  by Kari 
 
-![screenshot](screenshot.png)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+![screenshot](p2_fcq.png)
 
-# (Question 3)
+so the largest area rectagular indicate the largest number of instructors in Laws subject.
 
-![screenshot](screenshot.png)
+# Does the instructors tends to give out higher grades if they teach more classes? or the reverse?  by Ming 
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+![screenshot](p31_fcq.png)
+![screenshot](p32_fcq.png)
+![screenshot](p33_fcq.png)
 
-# (Question 4)
+For this question i'm not able to obtain the full number because of complexity, but i'm able to obtain the average gpa per class,
+At the left-most, it indicate the most classes, and the average gpa given by that teacher. But according to the previous answer in the report,
+we know the trend is going down as classes increases.
 
-![screenshot](screenshot.png)
+# Which department has the lowest enrollment?  by John 
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+![screenshot](p4_fcq.png)
 
-# (Question 5)
+the light pink name RASE as the smaller bubble that indicate the minimum enrollment size because of simplicity i range the size of the enrollment down to 600. Thus we only
+have only a few bubbles.
 
-![screenshot](screenshot.png)
+# Which subject is most in demand,based on the total number of enrollment?  by Sushant
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)    
+![screenshot](p5_fcq.png)
+
+Because in my excel I dont have "Subject" so i utilize the "course department", thus i change the range of the course department. As
+we can see the dark plue indicate math department with the highest interest of the student. 

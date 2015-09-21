@@ -48,7 +48,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="1.5.1" data-basepath="../.." data-revision="Fri Sep 18 2015 19:45:56 GMT-0600 (Mountain Daylight Time)">
+    <div class="book" data-level="1.5.1" data-basepath="../.." data-revision="Sun Sep 20 2015 20:06:33 GMT-0600 (Mountain Daylight Time)">
     
 
 <div class="book-summary">
@@ -707,7 +707,29 @@ Coming up, we will incorporate variations of these questions into a future hacka
  and you are expected to be capable of reproducing and adapting your solutions.</p>
 <h1 id="which-course-has-the-highest-enrollment-by-andrew">Which course has the highest enrollment?  by Andrew</h1>
 <p><pre>
+<span class="comment">//for course title</span>
+<span class="keyword">var</span> group = _.groupBy(data, <span class="string">&apos;CourseTitle&apos;</span>);
+<span class="keyword">var</span> coursesEnroll = _.mapValues(group, <span class="keyword">function</span>(d){
+   <span class="keyword">var</span> enrollNumbers = _.pluck(d, <span class="string">&apos;N.ENROLL&apos;</span>)
+   <span class="keyword">return</span> _.sum(enrollNumbers)
+})
+<span class="keyword">var</span> max = _.max(coursesEnroll);
+<span class="keyword">var</span> bigClass =  _.pick(coursesEnroll, <span class="keyword">function</span>(d){
+   <span class="keyword">return</span> d == max;
+});
+<span class="keyword">return</span> bigClass 
+
 </pre></p>
+<table>
+
+    <tr>
+        <td>First-Year Writing and Rhetoric</td>
+        <td>3187</td>
+    </tr>
+
+</table>
+
+
 <h1 id="how-many-instructors-have-taught-each-subject-by-kari">How many instructors have taught each subject?  by Kari</h1>
 <p><pre>
 
