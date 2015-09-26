@@ -14,7 +14,7 @@ This time, the data is not already prepared for you in a nice JSON format. You
 will need to do it on your own, replacing the placeholder `birdstrike.json` with
 real data.
 
-#1 Which airline have to incur most repair cost due to damage ? ( sumi6109).
+#1 Which airline have to incur most repair cost due to damage ? by Ming Liew
 {% lodash %}
 var group = _.groupBy(data, "Aircraft.Airline");
 var repair_sum = _.mapValues(group, function(n){
@@ -41,10 +41,14 @@ return result
 {% endfor %}
 </table>
 
-#2 Which Airport has the highest number struck? (zhya215 ).
+#2 Which Airport has the highest number struck? By Brian McKean
 
 {% lodash %}
-var group = _.groupBy(data, "Airport.Name");
+names = _.filter(data,function(n){
+  return n['Airport']['Name'] != "UNKNOWN"
+})
+
+var group = _.groupBy(names, "Airport.Name");
 var total_sum = _.mapValues(group, function(n){
    return n.length;
 });
@@ -63,7 +67,7 @@ return highest
 {% endfor %}
 </table>
 
-#3 Which plane model strikes the most birds? (twagar95) 
+#3 Which plane model strikes the most birds? by Matt
 
 {% lodash %}
 var group = _.groupBy(data,"Aircraft.Make");
@@ -86,18 +90,23 @@ return highest
 {% endfor %}
 </table>
 
-#4 What state had the highest number of bird strikes?  (drewdinger).
+#4 What state had the highest number of bird strikes?  by Dian
 
 {% lodash %}
-var group = _.groupBy(data,"Origin");
+names = _.filter(data,function(n){
+  return n.Origin != "N/A"
+})
+var group = _.groupBy(names,"Origin");
 var result = _.mapValues(group, function(n){
 	return n.length
 });
+
 var max = _.max(result);
 
 var highest =  _.pick(result, function(d){
    return d == max;
 });
+
 return highest
 {% endlodash %}
 <table>

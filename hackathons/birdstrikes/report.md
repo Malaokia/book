@@ -14,27 +14,27 @@ This report is prepared by
 
 # (Question 1)
 
-Which airline have to incur most repair cost due to damage ? ( sumi6109).
+Which airline have to incur most repair cost due to damage ? by Ming Liew
 
 ![screenshot](p1_bird.png)
 
 Picture of the repair cost
 
 # (Question 2)
-Which Airport has the highest number struck? (zhya215 ).
+Which Airport has the highest number struck? by Brian
 
 ![screenshot](p2_bird.png)
 
 geographical location of the airline that cost the money
 
 # (Question 3)
-Which plane model strikes the most birds? (twagar95) 
+Which plane model strikes the most birds? by Matt
 ![screenshot](p3_bird.png)
 diff model of strikes on the bird
 
 # (Question 4)
 
-What state had the highest number of bird strikes?  (drewdinger).
+What state had the highest number of bird strikes?  By Dian
 
 ![screenshot](p4_bird.png)
 
