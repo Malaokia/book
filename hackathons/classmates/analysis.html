@@ -29,6 +29,10 @@
         
     
         
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css">
+        
+    
+        
         <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
         
     
@@ -48,7 +52,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="2.2.3" data-basepath="../.." data-revision="Sun Sep 20 2015 20:06:33 GMT-0600 (Mountain Daylight Time)">
+    <div class="book" data-level="2.2.3" data-basepath="../.." data-revision="Fri Sep 25 2015 18:29:21 GMT-0600 (Mountain Daylight Time)">
     
 
 <div class="book-summary">
@@ -379,6 +383,72 @@
             
         </li>
     
+        <li class="chapter " data-level="1.6" data-path="learning/week5/index.html">
+            
+                
+                    <a href="../../learning/week5/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        Week 5
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="learning/week5/birdstrike-report.html">
+            
+                
+                    <a href="../../learning/week5/birdstrike-report.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.1.</b>
+                        
+                        Birdstrike Report
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="learning/week5/viz-steps.html">
+            
+                
+                    <a href="../../learning/week5/viz-steps.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.2.</b>
+                        
+                        Viz Intro
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="learning/week5/viz-drills.html">
+            
+                
+                    <a href="../../learning/week5/viz-drills.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.3.</b>
+                        
+                        Viz Drills
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -583,6 +653,42 @@
             
         </li>
     
+        <li class="chapter " data-level="2.4" data-path="hackathons/birdstrikes/index.html">
+            
+                
+                    <a href="../../hackathons/birdstrikes/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        Birdstrikes
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="hackathons/birdstrikes/report.html">
+            
+                
+                    <a href="../../hackathons/birdstrikes/report.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.1.</b>
+                        
+                        Report
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -697,31 +803,24 @@
 <p>After completing the warmup exercises, your task is to do four more slightly
 more challenges analyses.</p>
 <h2 id="how-many-students-like-sushi-as-their-favorite-food">How many students like sushi as their favorite food?</h2>
-<p><pre>
-result = _.pluck(data.comments, <span class="string">&quot;body&quot;</span>)
-result = _.size(_.filter(result, <span class="keyword">function</span>(n){
-    <span class="keyword">return</span> _.contains(n, <span class="string">&quot;Sushi&quot;</span>)}))
-<span class="keyword">return</span> result
-
-</pre></p>
+<p><pre><code>result = _.pluck(data.comments, &quot;body&quot;)
+result = _.size(_.filter(result, function(n){
+	return _.contains(n, &quot;Sushi&quot;)}))
+return result</code></pre></p>
 <p>The answer is 5.</p>
 <h2 id="who-are-the-students-liking-python-the-most">Who are the students liking Python the most?</h2>
-<p><pre>
-<span class="keyword">var</span> <span class="keyword">array</span>;
-result = _.pluck(data.comments, <span class="string">&quot;body&quot;</span>)
-result = _.filter(result, <span class="keyword">function</span>(n){
-    <span class="keyword">return</span> _.contains(n, <span class="string">&quot;Python&quot;</span>)})
+<p><pre><code>var array;
+result = _.pluck(data.comments, &quot;body&quot;)
+result = _.filter(result, function(n){
+	return _.contains(n, &quot;Python&quot;)})
 
-_.<span class="keyword">forEach</span>(result, <span class="keyword">function</span>(n){
-    n = _.trimLeft(n,<span class="string">&quot;Name: &quot;</span>);
-    n=_.first(n.split(<span class="string">&apos;\r&apos;</span>));
-    console.log(n);
-    <span class="keyword">array</span> = _(<span class="keyword">array</span>).concat(n);
+_.forEach(result, function(n){
+	n = _.trimLeft(n,&quot;Name: &quot;);
+	n=_.first(n.split(&apos;\r&apos;));
+	console.log(n);
+	array = _(array).concat(n);
 });
-<span class="keyword">return</span> <span class="keyword">array</span>
-
-
-</pre><div class="console">console&gt; &quot;William Farmer&quot;
+return array</code></pre><div class="console">console&gt; &quot;William Farmer&quot;
 console&gt; &quot;Heather Witte&quot;
 console&gt; &quot;Zach Lamb&quot;
 console&gt; &quot;Zhili Yang&quot;
@@ -734,54 +833,47 @@ console&gt; &quot;Andrey Shprengel&quot;
 </div></p>
 <p>Their names are [object Object],William Farmer,Heather Witte,Zach Lamb,Zhili Yang,John Cronk,Denis Kazakov,Caleb Hsu,Karen Blakemore,Sanketh S Shetty,Andrey Shprengel.</p>
 <h2 id="are-there-more-javascript-lovers-or-java-lovers">Are there more Javascript lovers or Java lovers?</h2>
-<p><pre>
-<span class="keyword">var</span> <span class="keyword">array</span>
-result = _.pluck(data.comments, <span class="string">&quot;body&quot;</span>)
-jv0 = _.size(_.filter(result, <span class="keyword">function</span>(n){
-    <span class="keyword">return</span> _.contains(n, <span class="string">&quot;Java&quot;</span>)}))
+<p><pre><code>var array
+result = _.pluck(data.comments, &quot;body&quot;)
+jv0 = _.size(_.filter(result, function(n){
+	return _.contains(n, &quot;Java&quot;)}))
 
-<span class="keyword">var</span> js0 = _.size(_.filter(result, <span class="keyword">function</span>(n){
-    <span class="keyword">return</span> _.contains(n,<span class="string">&quot;javascript&quot;</span>)}))
-<span class="keyword">var</span> js1= _.size(_.filter(result, <span class="keyword">function</span>(n){
-    <span class="keyword">return</span> _.contains(n, <span class="string">&quot;Javascript&quot;</span>);}))
-<span class="keyword">var</span> js = _.add(js0,js1)
-<span class="keyword">var</span> r = _.gte(js,jv0)
-<span class="keyword">if</span>(r == <span class="keyword">true</span>) {<span class="keyword">return</span> <span class="string">&quot;Javascript&quot;</span>}
-<span class="keyword">else</span>{<span class="keyword">return</span> <span class="string">&quot;Java&quot;</span>}
-
-</pre></p>
+var js0 = _.size(_.filter(result, function(n){
+	return _.contains(n,&quot;javascript&quot;)}))
+var js1= _.size(_.filter(result, function(n){
+	return _.contains(n, &quot;Javascript&quot;);}))
+var js = _.add(js0,js1)
+var r = _.gte(js,jv0)
+if(r == true) {return &quot;Javascript&quot;}
+else{return &quot;Java&quot;}</code></pre></p>
 <p>The answer is Java.</p>
 <h2 id="who-like-the-same-food-as-kjblakemore">Who like the same food as <code>kjblakemore</code>?</h2>
-<p><pre>
+<p><pre><code>//var body = _.filter(data.comments, _.matchesProperty(&quot;user.login&quot;,&quot;kjblakemore&quot;))
+//var kjbody = _.first(_.pluck(body,&quot;body&quot;))
+//var vegan = _.last(kjbody.split(&quot;Food: &quot;))
 
-<span class="comment">//var body = _.filter(data.comments, _.matchesProperty(&quot;user.login&quot;,&quot;kjblakemore&quot;))</span>
-<span class="comment">//var kjbody = _.first(_.pluck(body,&quot;body&quot;))</span>
-<span class="comment">//var vegan = _.last(kjbody.split(&quot;Food: &quot;))</span>
-
-<span class="keyword">var</span> text = _.filter(data.comments, <span class="keyword">function</span>(n){
-    <span class="keyword">return</span> _.includes(n.body,<span class="string">&quot;Vegan&quot;</span>);
+var text = _.filter(data.comments, function(n){
+	return _.includes(n.body,&quot;Vegan&quot;);
 })
 
-<span class="keyword">var</span> text1 = _.pluck(text, <span class="string">&quot;body&quot;</span>)
+var text1 = _.pluck(text, &quot;body&quot;)
 console.log(text1)
-<span class="keyword">var</span> name = []
-<span class="keyword">var</span> finalName = []
-<span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; _.size(text1);i++){
-    name.push(_.first(text1[i].split(<span class="string">&quot;\r\n&quot;</span>)))
-    finalName.push(_.last(name[i].split(<span class="string">&apos;Name:&apos;</span>)))
+var name = []
+var finalName = []
+for(i = 0; i &lt; _.size(text1);i++){
+	name.push(_.first(text1[i].split(&quot;\r\n&quot;)))
+	finalName.push(_.last(name[i].split(&apos;Name:&apos;)))
 }
 console.log(name)
-<span class="keyword">return</span> finalName
+return finalName
 
 
 
-<span class="comment">//_.forEach(_.pluck(data.comments,&quot;body&quot;), function(n){</span>
-<span class="comment">//	array = _(array).concat(_.filter(n,_.contains(vegan)));	</span>
-<span class="comment">//});</span>
-<span class="comment">//console.log(array)</span>
-<span class="comment">//return result</span>
-
-</pre><div class="console">console&gt; [
+//_.forEach(_.pluck(data.comments,&quot;body&quot;), function(n){
+//	array = _(array).concat(_.filter(n,_.contains(vegan)));	
+//});
+//console.log(array)
+//return result</code></pre><div class="console">console&gt; [
  &quot;Name: Karen Blakemore\r\nDepartment: MS CS, BS Math\r\nFavorite Programming Language: Python\r\nFavorite Food: Vegan&quot;
 ]
 console&gt; [
@@ -809,6 +901,14 @@ console&gt; [
 
         
 <script src="../../gitbook/app.js"></script>
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-bigdata/bigdata.js"></script>
+    
+
+    
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+    
 
     
     <script src="../../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
