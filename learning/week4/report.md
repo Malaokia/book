@@ -70,6 +70,8 @@ return result
 var graded = _.filter(data,function(d){
   return d.hasOwnProperty("AVG_GRD");
 })
+
+
 var smallData = _.map(graded, function(d){
   var avg_grd = d.AVG_GRD;
   var nameArr = _.pluck(d.Instructors, 'name');
@@ -81,6 +83,7 @@ var smallData = _.map(graded, function(d){
 });
 
 var groups = _.groupBy(_.flatten(smallData),'name');
+
 var groups2 = _.map(groups, function(d){
   var avg = _.reduce(d, function(total,e){
     return total+e.AVG_GRD;
@@ -98,7 +101,6 @@ var avgbyCount = _.mapValues(groups3, function(d){
   return obj;
 });
 return avgbyCount
-
 {% endlodash %}
 
 {{result | json}}

@@ -6,53 +6,44 @@ bird strikes.
 # Authors
 
 This report is prepared by
-* [Full name](link to github account)
-* [Full name](link to github account)
-* [Full name](link to github account)
-* [Full name](link to github account)
-* [Full name](link to github account)
+* [Brian](https://github.com/co-bri/book)
+* [Dian](https://github.com/boanding/book)
+* [Matt S.](https://github.com/mattschroeder97/book)
+* [Karen](https://github.com/kjblakemore/book)
+* [Ming Liew](https://github.com/Malaokia/book)
 
 # (Question 1)
 
-This question was asked by (student's github id).
+Which airline have to incur most repair cost due to damage ? ( sumi6109).
 
-![screenshot](screenshot.png)
+![screenshot](p1_bird.png)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+Picture of the repair cost
 
 # (Question 2)
+Which Airport has the highest number struck? (zhya215 ).
 
-This question was asked by (student's github id).
+![screenshot](p2_bird.png)
 
-![screenshot](screenshot.png)
-
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+geographical location of the airline that cost the money
 
 # (Question 3)
-
-This question was asked by (student's github id).
-
-![screenshot](screenshot.png)
-
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+Which plane model strikes the most birds? (twagar95) 
+![screenshot](p3_bird.png)
+diff model of strikes on the bird
 
 # (Question 4)
 
-This question was asked by (student's github id).
+What state had the highest number of bird strikes?  (drewdinger).
 
-![screenshot](screenshot.png)
+![screenshot](p4_bird.png)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+different number of bird
 
 # (Question 5)
 
-This question was asked by (student's github id).
+# (What airports have the most expensive average accident) by (Karen Blakemore)
 
-![screenshot](screenshot.png)
+![screenshot](p5_bird.png)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)    
+3 different graph that indicate the average 
