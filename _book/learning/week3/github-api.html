@@ -5,7 +5,7 @@
         <!-- head:start -->
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Data | book</title>
+        <title>Github API | book</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.2.0">
@@ -41,10 +41,10 @@
         
     
     
-    <link rel="next" href="../../hackathons/classmates/warmup.html" />
+    <link rel="next" href="../../learning/week3/lodash-drills.html" />
     
     
-    <link rel="prev" href="../../hackathons/classmates/index.html" />
+    <link rel="prev" href="../../learning/week3/index.html" />
     
 
         <!-- head:end -->
@@ -52,7 +52,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="2.2.1" data-basepath="../.." data-revision="Fri Sep 25 2015 23:33:03 GMT-0600 (Mountain Daylight Time)">
+    <div class="book" data-level="1.4.1" data-basepath="../.." data-revision="Fri Sep 25 2015 23:33:03 GMT-0600 (Mountain Daylight Time)">
     
 
 <div class="book-summary">
@@ -282,7 +282,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="learning/week3/github-api.html">
+        <li class="chapter active" data-level="1.4.1" data-path="learning/week3/github-api.html">
             
                 
                     <a href="../../learning/week3/github-api.html">
@@ -537,7 +537,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="2.2.1" data-path="hackathons/classmates/data.html">
+        <li class="chapter " data-level="2.2.1" data-path="hackathons/classmates/data.html">
             
                 
                     <a href="../../hackathons/classmates/data.html">
@@ -799,9 +799,70 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="data">Data</h1>
-<p>There are 26 comments.</p>
-<p>The raw data is in the JSON format and is shown below.</p>
+                        <h1 id="github-api">Github API</h1>
+<p>The objective is to learn how to use Github&apos;s API to pull in real data. Your need
+to figure out how to compose an URL for accessing a particular API to grab the data
+you want.</p>
+<p>Github provides a wide range of APIs. We will focus on these three for now.</p>
+<ul>
+<li><a href="https://developer.github.com/v3/issues/" target="_blank">Issues API</a></li>
+<li><a href="https://developer.github.com/v3/users/" target="_blank">Users API</a></li>
+<li><a href="https://developer.github.com/v3/repos/" target="_blank">Repositories API</a></li>
+</ul>
+<p>Carefully go through the examples below.</p>
+<h3 id="what-is-the-data-of-the-first-issue">What is the data of the first issue?</h3>
+<p><div class="githubapi">       <div class="message">Data is loaded from https://api.github.com/repos/bigdatahci2015/forum/issues/1</div></div></p>
+<p>The data is saved in <code>data</code>. It looks like below.</p>
+<p>GET /repos/:owner/:repo</p>
+<pre style="font-size:11px;line-height:1;max-height:300px;">{
+ &quot;url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/forum/issues/1&quot;,
+ &quot;labels_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/forum/issues/1/labels{/name}&quot;,
+ &quot;comments_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/forum/issues/1/comments&quot;,
+ &quot;events_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/forum/issues/1/events&quot;,
+ &quot;html_url&quot;: &quot;https://github.com/bigdatahci2015/forum/issues/1&quot;,
+ &quot;id&quot;: 102129972,
+ &quot;number&quot;: 1,
+ &quot;title&quot;: &quot;Introduction&quot;,
+ &quot;user&quot;: {
+  &quot;login&quot;: &quot;doubleshow&quot;,
+  &quot;id&quot;: 129562,
+  &quot;avatar_url&quot;: &quot;https://avatars.githubusercontent.com/u/129562?v=3&quot;,
+  &quot;gravatar_id&quot;: &quot;&quot;,
+  &quot;url&quot;: &quot;https://api.github.com/users/doubleshow&quot;,
+  &quot;html_url&quot;: &quot;https://github.com/doubleshow&quot;,
+  &quot;followers_url&quot;: &quot;https://api.github.com/users/doubleshow/followers&quot;,
+  &quot;following_url&quot;: &quot;https://api.github.com/users/doubleshow/following{/other_user}&quot;,
+  &quot;gists_url&quot;: &quot;https://api.github.com/users/doubleshow/gists{/gist_id}&quot;,
+  &quot;starred_url&quot;: &quot;https://api.github.com/users/doubleshow/starred{/owner}{/repo}&quot;,
+  &quot;subscriptions_url&quot;: &quot;https://api.github.com/users/doubleshow/subscriptions&quot;,
+  &quot;organizations_url&quot;: &quot;https://api.github.com/users/doubleshow/orgs&quot;,
+  &quot;repos_url&quot;: &quot;https://api.github.com/users/doubleshow/repos&quot;,
+  &quot;events_url&quot;: &quot;https://api.github.com/users/doubleshow/events{/privacy}&quot;,
+  &quot;received_events_url&quot;: &quot;https://api.github.com/users/doubleshow/received_events&quot;,
+  &quot;type&quot;: &quot;User&quot;,
+  &quot;site_admin&quot;: false
+ },
+ &quot;labels&quot;: [],
+ &quot;state&quot;: &quot;open&quot;,
+ &quot;locked&quot;: false,
+ &quot;assignee&quot;: null,
+ &quot;milestone&quot;: null,
+ &quot;comments&quot;: 28,
+ &quot;created_at&quot;: &quot;2015-08-20T12:43:48Z&quot;,
+ &quot;updated_at&quot;: &quot;2015-09-11T13:57:02Z&quot;,
+ &quot;closed_at&quot;: null,
+ &quot;body&quot;: &quot;Name: Tom Yeh\r\nDepartment: Computer Science\r\nFavorite Programming Language: Javascript\r\nFavorite Food: BBQ&quot;,
+ &quot;closed_by&quot;: null
+}</pre>
+
+<h3 id="what-is-the-title-of-the-first-issue">What is the title of the first issue?</h3>
+<p><a href="https://api.github.com/repos/bigdatahci2015/forum/issues/1" target="_blank">https://api.github.com/repos/bigdatahci2015/forum/issues/1</a></p>
+<p>Introduction</p>
+<h3 id="who-created-this-issue">Who created this issue?</h3>
+<p>doubleshow</p>
+<h3 id="what-are-the-comments-of-this-issue">What are the comments of this issue?</h3>
+<p><div class="githubapi">       <div class="message">Data is loaded from https://api.github.com/repos/bigdatahci2015/forum/issues/1/comments</div></div></p>
+<p>The comments data look like</p>
 <pre style="font-size:11px;line-height:1;max-height:300px;">[
  {
   &quot;url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/forum/issues/comments/133203904&quot;,
@@ -901,6 +962,254 @@
    &quot;html_url&quot;: &quot;https://github.com/fadhilfath&quot;,
    &quot;followers_url&quot;: &quot;https://api.githu</pre>
 
+<p>There are 28 comments.</p>
+<p><pre><code>return _.pluck(data, &apos;user.login&apos;)</code></pre></p>
+<p>The github account names are willzfarmer,twagar95,Malaokia,fadhilfath,hswitte,ZachLamb,zhya215,jocr1627,drewdinger,94kazakov,nicolele,satchelspencer,tiro6090,Linenfelser,KevinKGifford,calebhsu,sumi6109,pail4944,DomoYeti,boanding,kjblakemore,SankethSukumarShetty,AndreyShprengel,co-bri,karisantos,anbe6083,jraesly,doubleshow.</p>
+<h1 id="exercises">Exercises</h1>
+<p>Now it&apos;s your turn to answer the following questions using the real data.</p>
+<h3 id="how-many-issues-have-been-created-to-date-in-our-class-s-forum-repository">How many issues have been created to date in our class&apos;s forum repository?</h3>
+<p><div class="githubapi">       <div class="message">Data is loaded from https://api.github.com/repos/bigdatahci2015/forum/issues</div></div></p>
+<pre style="font-size:11px;line-height:1;max-height:300px;">[
+ {
+  &quot;url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/forum/issues/24&quot;,
+  &quot;labels_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/forum/issues/24/labels{/name}&quot;,
+  &quot;comments_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/forum/issues/24/comments&quot;,
+  &quot;events_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/forum/issues/24/events&quot;,
+  &quot;html_url&quot;: &quot;https://github.com/bigdatahci2015/forum/issues/24&quot;,
+  &quot;id&quot;: 108414092,
+  &quot;number&quot;: 24,
+  &quot;title&quot;: &quot;Tried to push and could not upload birdstrikes.json&quot;,
+  &quot;user&quot;: {
+   &quot;login&quot;: &quot;co-bri&quot;,
+   &quot;id&quot;: 5174490,
+   &quot;avatar_url&quot;: &quot;https://avatars.githubusercontent.com/u/5174490?v=3&quot;,
+   &quot;gravatar_id&quot;: &quot;&quot;,
+   &quot;url&quot;: &quot;https://api.github.com/users/co-bri&quot;,
+   &quot;html_url&quot;: &quot;https://github.com/co-bri&quot;,
+   &quot;followers_url&quot;: &quot;https://api.github.com/users/co-bri/followers&quot;,
+   &quot;following_url&quot;: &quot;https://api.github.com/users/co-bri/following{/other_user}&quot;,
+   &quot;gists_url&quot;: &quot;https://api.github.com/users/co-bri/gists{/gist_id}&quot;,
+   &quot;starred_url&quot;: &quot;https://api.github.com/users/co-bri/starred{/owner}{/repo}&quot;,
+   &quot;subscriptions_url&quot;: &quot;https://api.github.com/users/co-bri/subscriptions&quot;,
+   &quot;organizations_url&quot;: &quot;https://api.github.com/users/co-bri/orgs&quot;,
+   &quot;repos_url&quot;: &quot;https://api.github.com/users/co-bri/repos&quot;,
+   &quot;events_url&quot;: &quot;https://api.github.com/users/co-bri/events{/privacy}&quot;,
+   &quot;received_events_url&quot;: &quot;https://api.github.com/users/co-bri/received_events&quot;,
+   &quot;type&quot;: &quot;User&quot;,
+   &quot;site_admin&quot;: false
+  },
+  &quot;labels&quot;: [],
+  &quot;state&quot;: &quot;open&quot;,
+  &quot;locked&quot;: false,
+  &quot;assignee&quot;: null,
+  &quot;milestone&quot;: null,
+  &quot;comments&quot;: 7,
+  &quot;created_at&quot;: &quot;2015-09-25T21:55:08Z&quot;,
+  &quot;updated_at&quot;: &quot;2015-09-26T03:57:01Z&quot;,
+  &quot;closed_at&quot;: null,
+  &quot;body&quot;: &quot;remote: error: File _book/hackathons/birdstrikes/birdstrikes.json is 135.64 MB; this exceeds GitHub&apos;s file size limit of 100.00 MB&quot;
+ },
+ {
+  &quot;url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/forum/issues/23&quot;,
+  &quot;labels_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/forum/issues/23/labels{/name}&quot;,
+  &quot;comments_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/forum/issues/23/comments&quot;,
+  &quot;events_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/forum/issues/23/events&quot;,
+  &quot;html_url&quot;: &quot;https://github.com/bigdatahci2015/forum/issues/23&quot;,
+  &quot;id&quot;: 108115146,
+  &quot;number&quot;: 23,
+  &quot;title&quot;: &quot;Viz drills are posted&quot;,
+  &quot;user&quot;: {
+   &quot;login&quot;: &quot;doubleshow&quot;,
+   &quot;id&quot;: 129562,
+   &quot;avatar_url&quot;: &quot;https://avatars.githubusercontent.com/u/129562?v=3&quot;,
+   &quot;gravatar_id&quot;: &quot;&quot;,
+   &quot;url&quot;: &quot;https://api.github.com/users/doubleshow&quot;,
+   &quot;html_url&quot;: &quot;https://github.com/doubleshow&quot;,
+   &quot;followers_url&quot;: &quot;https://api.github.com/users/doubleshow/followers&quot;,
+   &quot;following_url&quot;: &quot;https://api.github.com/users/doubleshow/following{/other_user}&quot;,
+   &quot;gists_url&quot;: &quot;https://api.github.com/users/doubleshow/gists{/gist_id}&quot;,
+   &quot;starred_url&quot;: &quot;https://api.github.com/users/doubleshow/starred{/owner}{/repo}&quot;,
+   &quot;subscriptions_url&quot;: &quot;https://api.github.com/users/doubleshow/subscriptions&quot;,
+   &quot;organizations_url&quot;: &quot;https://api.github.com/users/doubleshow/orgs&quot;,
+   &quot;repos_url&quot;: &quot;https://api.github.com/users/doubleshow/repos&quot;,
+   &quot;events_url&quot;: &quot;https://api.github.com/users/doubleshow/events{/privacy}&quot;,
+   &quot;received_events_url&quot;: &quot;https://api.github.com/users/doubleshow/received_events&quot;,
+   &quot;type&quot;: &quot;User&quot;,
+   &quot;site_admin&quot;: false
+  },
+  &quot;labels&quot;: [],
+  &quot;state&quot;: &quot;open&quot;,
+  &quot;locked&quot;: false,
+  &quot;assignee&quot;: null,
+  &quot;milestone&quot;: null,
+  &quot;comments&quot;: 0,
+  &quot;created_at&quot;: &quot;2015-09-24T11:49:42Z&quot;,
+  &quot;updated_at&quot;: &quot;2015-09-24T11:49:42Z&quot;,
+  &quot;closed_at&quot;: null,
+  &quot;body&quot;: &quot;Please get started on looking into this week&apos;s visualization learning challenge. The Intro page was already posted a few days ago. We just posted a series of drills that will give more opportunities to pick up new skills and practice. \r\n\r\nhttp://doubleshow.github.io/book/learning/week5/viz-drills.html\r\nhttp://doubleshow.github.io/book/learning/week5/viz-pokemon.html\r\n\r\nUpdate your book following the same procedure as before. Also remember to do `npm update` to get the updated plugin.\r\n      &quot;
+ },
+ {
+  &quot;url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/forum/issues/22&quot;,
+  &quot;labels_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/forum/issues/22/labels{/name}&quot;,
+  &quot;comments_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/forum/issues/22/comments&quot;,
+  &quot;events_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/forum/issues/22/events&quot;,
+  &quot;html_url&quot;: &quot;https://github.com/bigdatahci2015/forum/issues/22&quot;,
+  &quot;id&quot;: 107620285,
+  &quot;number&quot;: 22,
+  &quot;title&quot;: &quot;Which Airports had the most incidents of aircraft being damaged?&quot;,
+  &quot;user&quot;: {
+   &quot;login&quot;: &quot;co-bri&quot;,
+   &quot;id&quot;: 5174490,
+   &quot;avatar_url&quot;: &quot;https://avatars.githubusercontent.com/u/5174490?v=3&quot;,
+   &quot;gravatar_id&quot;: &quot;&quot;,
+   &quot;url&quot;: &quot;https://api.github.com/users/co-bri&quot;,
+   &quot;html_url&quot;: &quot;https://github.com/co-bri&quot;,
+   &quot;followers_url&quot;: &quot;https://api.github.com/users/co-bri/followers&quot;,
+   &quot;following_url&quot;: &quot;https://api.github.com/users/co-bri/following{/other_user}&quot;,
+   &quot;gists_url&quot;: &quot;https://api.github.com/users/co-</pre>
+
+<p><pre><code>return data.length</code></pre></p>
+<p>21 has issues has been created.</p>
+<h3 id="what-are-the-titles-of-these-issues">What are the titles of these issues?</h3>
+<p><pre><code>return _.pluck(data, &quot;title&quot;)</code></pre></p>
+<p>Tried to push and could not upload birdstrikes.json,Viz drills are posted,Which Airports had the most incidents of aircraft being damaged?,Questions for the Birdstrike Hackathon,Corrupt file in .git,Converting JSON to Tableau ready (on OSX),Week 4 Learning Challenge ,Your FCQ question,Everyone&apos;s book,This week&apos;s challenge and next week&apos;s hackathon,Week 3 Learning Challenge Updated / Posted,Tableau,lodash variables,Week 2 Learning Challenge Updated / Posted,Week 2 Team Learning Clarification,Knowing Your Classmates Hackathon,Problems uploading book to github.io,Hackathons,First Learning Challenge (Update),Learning challenges,Introduction is the title of the issue</p>
+<h3 id="how-many-repository-have-been-created-to-date-for-our-class">How many repository have been created to date for our class?</h3>
+<p>Our class&apos;s Github organization is <a href="https://github.com/bigdatahci2015/" target="_blank">bigdatahci2015</a>.</p>
+<p><div class="githubapi">       <div class="message">Data is loaded from https://api.github.com/users/bigdatahci2015/repos</div></div></p>
+<pre style="font-size:11px;line-height:1;max-height:300px;">[
+ {
+  &quot;id&quot;: 41165825,
+  &quot;name&quot;: &quot;book&quot;,
+  &quot;full_name&quot;: &quot;bigdatahci2015/book&quot;,
+  &quot;owner&quot;: {
+   &quot;login&quot;: &quot;bigdatahci2015&quot;,
+   &quot;id&quot;: 13886111,
+   &quot;avatar_url&quot;: &quot;https://avatars.githubusercontent.com/u/13886111?v=3&quot;,
+   &quot;gravatar_id&quot;: &quot;&quot;,
+   &quot;url&quot;: &quot;https://api.github.com/users/bigdatahci2015&quot;,
+   &quot;html_url&quot;: &quot;https://github.com/bigdatahci2015&quot;,
+   &quot;followers_url&quot;: &quot;https://api.github.com/users/bigdatahci2015/followers&quot;,
+   &quot;following_url&quot;: &quot;https://api.github.com/users/bigdatahci2015/following{/other_user}&quot;,
+   &quot;gists_url&quot;: &quot;https://api.github.com/users/bigdatahci2015/gists{/gist_id}&quot;,
+   &quot;starred_url&quot;: &quot;https://api.github.com/users/bigdatahci2015/starred{/owner}{/repo}&quot;,
+   &quot;subscriptions_url&quot;: &quot;https://api.github.com/users/bigdatahci2015/subscriptions&quot;,
+   &quot;organizations_url&quot;: &quot;https://api.github.com/users/bigdatahci2015/orgs&quot;,
+   &quot;repos_url&quot;: &quot;https://api.github.com/users/bigdatahci2015/repos&quot;,
+   &quot;events_url&quot;: &quot;https://api.github.com/users/bigdatahci2015/events{/privacy}&quot;,
+   &quot;received_events_url&quot;: &quot;https://api.github.com/users/bigdatahci2015/received_events&quot;,
+   &quot;type&quot;: &quot;Organization&quot;,
+   &quot;site_admin&quot;: false
+  },
+  &quot;private&quot;: false,
+  &quot;html_url&quot;: &quot;https://github.com/bigdatahci2015/book&quot;,
+  &quot;description&quot;: &quot;Everything I&apos;ve done and learned from the Big Data HCI course&quot;,
+  &quot;fork&quot;: false,
+  &quot;url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/book&quot;,
+  &quot;forks_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/book/forks&quot;,
+  &quot;keys_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/book/keys{/key_id}&quot;,
+  &quot;collaborators_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/book/collaborators{/collaborator}&quot;,
+  &quot;teams_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/book/teams&quot;,
+  &quot;hooks_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/book/hooks&quot;,
+  &quot;issue_events_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/book/issues/events{/number}&quot;,
+  &quot;events_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/book/events&quot;,
+  &quot;assignees_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/book/assignees{/user}&quot;,
+  &quot;branches_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/book/branches{/branch}&quot;,
+  &quot;tags_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/book/tags&quot;,
+  &quot;blobs_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/book/git/blobs{/sha}&quot;,
+  &quot;git_tags_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/book/git/tags{/sha}&quot;,
+  &quot;git_refs_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/book/git/refs{/sha}&quot;,
+  &quot;trees_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/book/git/trees{/sha}&quot;,
+  &quot;statuses_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/book/statuses/{sha}&quot;,
+  &quot;languages_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/book/languages&quot;,
+  &quot;stargazers_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/book/stargazers&quot;,
+  &quot;contributors_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/book/contributors&quot;,
+  &quot;subscribers_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/book/subscribers&quot;,
+  &quot;subscription_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/book/subscription&quot;,
+  &quot;commits_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/book/commits{/sha}&quot;,
+  &quot;git_commits_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/book/git/commits{/sha}&quot;,
+  &quot;comments_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/book/comments{/number}&quot;,
+  &quot;issue_comment_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/book/issues/comments{/number}&quot;,
+  &quot;contents_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/book/contents/{+path}&quot;,
+  &quot;compare_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/book/compare/{base}...{head}&quot;,
+  &quot;merges_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/book/merges&quot;,
+  &quot;archive_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/book/{archive_format}{/ref}&quot;,
+  &quot;downloads_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/book/downloads&quot;,
+  &quot;issues_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/book/issues{/number}&quot;,
+  &quot;pulls_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/book/pulls{/number}&quot;,
+  &quot;milestones_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/book/milestones{/number}&quot;,
+  &quot;notifications_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/book/notifications{?since,all,participating}&quot;,
+  &quot;labels_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/book/labels{/name}&quot;,
+  &quot;releases_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/book/releases{/id}&quot;,
+  &quot;created_at&quot;: &quot;2015-08-21T16:24:10Z&quot;,
+  &quot;updated_at&quot;: &quot;2015-08-24T02:46:53Z&quot;,
+  &quot;pushed_at&quot;: &quot;2015-09-26T04:55:13Z&quot;,
+  &quot;git_url&quot;: &quot;git://github.com/bigdatahci2015/book.git&quot;,
+  &quot;ssh_url&quot;: &quot;git@github.com:bigdatahci2015/book.git&quot;,
+  &quot;clone_url&quot;: &quot;https://github.com/bigdatahci2015/book.git&quot;,
+  &quot;svn_url&quot;: &quot;https://github.com/bigdatahci2015/book&quot;,
+  &quot;homepage&quot;: null,
+  &quot;size&quot;: 87006,
+  &quot;stargazers_count&quot;: 0,
+  &quot;watchers_count&quot;: 0,
+  &quot;language&quot;: &quot;HTML&quot;,
+  &quot;has_issues&quot;: true,
+  &quot;has_downloads&quot;: true,
+  &quot;has_wiki&quot;: true,
+  &quot;has_pages&quot;: false,
+  &quot;forks_count&quot;: 32,
+  &quot;mirror_url&quot;: null,
+  &quot;open_issues_count&quot;: 10,
+  &quot;forks&quot;: 32,
+  &quot;open</pre>
+
+<p><pre><code>return data.length</code></pre></p>
+<p>5 number of repository.</p>
+<h3 id="what-are-the-fork-counts-of-our-class-s-repositories">What are the fork counts of our class&apos;s repositories?</h3>
+<p><pre><code>data = _.pluck(data, &quot;forks_count&quot;)
+
+return _.size(data)</code></pre></p>
+<p>5 fork counts in our class&apos;s repositories.</p>
+<h3 id="how-many-public-repositories-does-the-user-doubleshow-have">How many public repositories does the user <code>doubleshow</code> have?</h3>
+<p><div class="githubapi">       <div class="message">Data is loaded from https://api.github.com/users/doubleshow</div></div></p>
+<pre style="font-size:11px;line-height:1;max-height:300px;">{
+ &quot;login&quot;: &quot;doubleshow&quot;,
+ &quot;id&quot;: 129562,
+ &quot;avatar_url&quot;: &quot;https://avatars.githubusercontent.com/u/129562?v=3&quot;,
+ &quot;gravatar_id&quot;: &quot;&quot;,
+ &quot;url&quot;: &quot;https://api.github.com/users/doubleshow&quot;,
+ &quot;html_url&quot;: &quot;https://github.com/doubleshow&quot;,
+ &quot;followers_url&quot;: &quot;https://api.github.com/users/doubleshow/followers&quot;,
+ &quot;following_url&quot;: &quot;https://api.github.com/users/doubleshow/following{/other_user}&quot;,
+ &quot;gists_url&quot;: &quot;https://api.github.com/users/doubleshow/gists{/gist_id}&quot;,
+ &quot;starred_url&quot;: &quot;https://api.github.com/users/doubleshow/starred{/owner}{/repo}&quot;,
+ &quot;subscriptions_url&quot;: &quot;https://api.github.com/users/doubleshow/subscriptions&quot;,
+ &quot;organizations_url&quot;: &quot;https://api.github.com/users/doubleshow/orgs&quot;,
+ &quot;repos_url&quot;: &quot;https://api.github.com/users/doubleshow/repos&quot;,
+ &quot;events_url&quot;: &quot;https://api.github.com/users/doubleshow/events{/privacy}&quot;,
+ &quot;received_events_url&quot;: &quot;https://api.github.com/users/doubleshow/received_events&quot;,
+ &quot;type&quot;: &quot;User&quot;,
+ &quot;site_admin&quot;: false,
+ &quot;name&quot;: &quot;Tom Yeh&quot;,
+ &quot;company&quot;: null,
+ &quot;blog&quot;: &quot;http://tomyeh.info&quot;,
+ &quot;location&quot;: null,
+ &quot;email&quot;: &quot;tom.yeh@colorado.edu&quot;,
+ &quot;hireable&quot;: null,
+ &quot;bio&quot;: null,
+ &quot;public_repos&quot;: 34,
+ &quot;public_gists&quot;: 501,
+ &quot;followers&quot;: 27,
+ &quot;following&quot;: 0,
+ &quot;created_at&quot;: &quot;2009-09-21T15:06:30Z&quot;,
+ &quot;updated_at&quot;: &quot;2015-09-25T20:43:46Z&quot;
+}</pre>
+
+<p><pre><code>return data.public_repos</code></pre></p>
+<p>34 number of public repos.</p>
+<h3 id="how-many-public-gists-does-the-user-doubleshow-have">How many public gists does the user <code>doubleshow</code> have?</h3>
+<p><pre><code>return data.public_gists</code></pre></p>
+<p>501 number of doubleshow</p>
+
                     
                     </section>
                 
@@ -910,10 +1219,10 @@
         </div>
 
         
-        <a href="../../hackathons/classmates/index.html" class="navigation navigation-prev " aria-label="Previous page: Classmates"><i class="fa fa-angle-left"></i></a>
+        <a href="../../learning/week3/index.html" class="navigation navigation-prev " aria-label="Previous page: Week 3"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../hackathons/classmates/warmup.html" class="navigation navigation-next " aria-label="Next page: Warmup"><i class="fa fa-angle-right"></i></a>
+        <a href="../../learning/week3/lodash-drills.html" class="navigation navigation-next " aria-label="Next page: Lodash Drills"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
