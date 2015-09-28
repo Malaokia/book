@@ -56,7 +56,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="1.6.4" data-basepath="../.." data-revision="Sun Sep 27 2015 20:22:08 GMT-0600 (Mountain Daylight Time)">
+    <div class="book" data-level="1.6.4" data-basepath="../.." data-revision="Sun Sep 27 2015 20:43:02 GMT-0600 (Mountain Daylight Time)">
     
 
 <div class="book-summary">
@@ -2247,7 +2247,7 @@ return result.join(&apos;\n&apos;)</code></pre><div class="section-title">Consol
         Squirtle
     </text>
 </g>
-<g transform="translate(0 1)">
+<g transform="translate(0 65)">
     <rect width="104" height="78" style="fill:red;
                 stroke-width:1;
                 stroke:rgb(0,0,0)"/>
@@ -2255,7 +2255,7 @@ return result.join(&apos;\n&apos;)</code></pre><div class="section-title">Consol
         Mega Charizard Y
     </text>
 </g>
-<g transform="translate(0 2)">
+<g transform="translate(0 143)">
     <rect width="52" height="43" style="fill:red;
                 stroke-width:1;
                 stroke:rgb(0,0,0)"/>
@@ -2263,7 +2263,7 @@ return result.join(&apos;\n&apos;)</code></pre><div class="section-title">Consol
         Charmander
     </text>
 </g>
-<g transform="translate(0 3)">
+<g transform="translate(0 186)">
     <rect width="100" height="123" style="fill:red;
                 stroke-width:1;
                 stroke:rgb(0,0,0)"/>
@@ -2271,7 +2271,7 @@ return result.join(&apos;\n&apos;)</code></pre><div class="section-title">Consol
         Mega Venusaur
     </text>
 </g>
-<g transform="translate(0 4)">
+<g transform="translate(0 309)">
     <rect width="82" height="83" style="fill:red;
                 stroke-width:1;
                 stroke:rgb(0,0,0)"/>
@@ -2279,7 +2279,7 @@ return result.join(&apos;\n&apos;)</code></pre><div class="section-title">Consol
         Venusaur
     </text>
 </g>
-<g transform="translate(0 5)">
+<g transform="translate(0 392)">
     <rect width="62" height="63" style="fill:red;
                 stroke-width:1;
                 stroke:rgb(0,0,0)"/>
@@ -2287,7 +2287,7 @@ return result.join(&apos;\n&apos;)</code></pre><div class="section-title">Consol
         Ivysaur
     </text>
 </g>
-<g transform="translate(0 6)">
+<g transform="translate(0 455)">
     <rect width="49" height="49" style="fill:red;
                 stroke-width:1;
                 stroke:rgb(0,0,0)"/>
@@ -2373,7 +2373,7 @@ return result.join(&apos;\n&apos;)</code></pre><div class="section-title">Consol
         Squirtle
     &lt;/text&gt;
 &lt;/g&gt;
-&lt;g transform=&quot;translate(0 1)&quot;&gt;
+&lt;g transform=&quot;translate(0 65)&quot;&gt;
     &lt;rect width=&quot;104&quot;
          height=&quot;78&quot;
          style=&quot;fill:red;
@@ -2383,7 +2383,7 @@ return result.join(&apos;\n&apos;)</code></pre><div class="section-title">Consol
         Mega Charizard Y
     &lt;/text&gt;
 &lt;/g&gt;
-&lt;g transform=&quot;translate(0 2)&quot;&gt;
+&lt;g transform=&quot;translate(0 143)&quot;&gt;
     &lt;rect width=&quot;52&quot;
          height=&quot;43&quot;
          style=&quot;fill:red;
@@ -2393,7 +2393,7 @@ return result.join(&apos;\n&apos;)</code></pre><div class="section-title">Consol
         Charmander
     &lt;/text&gt;
 &lt;/g&gt;
-&lt;g transform=&quot;translate(0 3)&quot;&gt;
+&lt;g transform=&quot;translate(0 186)&quot;&gt;
     &lt;rect width=&quot;100&quot;
          height=&quot;123&quot;
          style=&quot;fill:red;
@@ -2403,7 +2403,7 @@ return result.join(&apos;\n&apos;)</code></pre><div class="section-title">Consol
         Mega Venusaur
     &lt;/text&gt;
 &lt;/g&gt;
-&lt;g transform=&quot;translate(0 4)&quot;&gt;
+&lt;g transform=&quot;translate(0 309)&quot;&gt;
     &lt;rect width=&quot;82&quot;
          height=&quot;83&quot;
          style=&quot;fill:red;
@@ -2413,7 +2413,7 @@ return result.join(&apos;\n&apos;)</code></pre><div class="section-title">Consol
         Venusaur
     &lt;/text&gt;
 &lt;/g&gt;
-&lt;g transform=&quot;translate(0 5)&quot;&gt;
+&lt;g transform=&quot;translate(0 392)&quot;&gt;
     &lt;rect width=&quot;62&quot;
          height=&quot;63&quot;
          style=&quot;fill:red;
@@ -2423,7 +2423,7 @@ return result.join(&apos;\n&apos;)</code></pre><div class="section-title">Consol
         Ivysaur
     &lt;/text&gt;
 &lt;/g&gt;
-&lt;g transform=&quot;translate(0 6)&quot;&gt;
+&lt;g transform=&quot;translate(0 455)&quot;&gt;
     &lt;rect width=&quot;49&quot;
          height=&quot;49&quot;
          style=&quot;fill:red;
@@ -2455,13 +2455,15 @@ function computeHeight(d, i) {
 function computeLabel(d, i){
     return d.Name
 }
-var accum = 0;
 
+
+var S = _.pluck(data, &apos;Defense&apos;)
 function computeY(d, i) {
-  var h = 0;
-  var S = _.pluck(data,&quot;Defense&quot;)
-  for(x=0; x &lt; i; x++) h = h + S[x]
-  return x
+    var h = 0
+    for (x = 0; x &lt; i; x++){ 
+      h = h +  S[x] 
+    }
+    return h
 }
 
 function computeColor(d, i) {
@@ -2484,7 +2486,7 @@ var result = _.map(viz, function(d){
          // invoke the compiled template function on each viz data
          return template({d: d})
      })
-return result.join(&apos;\n&apos;)</code></pre><div class="section-title">Console<div style="border:1px solid #eee; margin-bottom: 5px;"><span style="font-size:10px;line-height:11px;" class="inspect">       [{&quot;x&quot;:0,&quot;y&quot;:0,&quot;height&quot;:65,&quot;width&quot;:48,&quot;color&quot;:&quot;red&quot;,&quot;label&quot;:&quot;Squirtle&quot;},{&quot;x&quot;:0,&quot;y&quot;:1,&quot;height&quot;:78,&quot;width&quot;:104,&quot;color&quot;:&quot;red&quot;,&quot;label&quot;:&quot;Mega Charizard Y&quot;},{&quot;x&quot;:0,&quot;y&quot;:2,&quot;height&quot;:43,&quot;width&quot;:52,&quot;color&quot;:&quot;red&quot;,&quot;label&quot;:&quot;Charmander&quot;},{&quot;x&quot;:0,&quot;y&quot;:3,&quot;height&quot;:123,&quot;width&quot;:100,&quot;color&quot;:&quot;red&quot;,&quot;label&quot;:&quot;Mega Venusaur&quot;},{&quot;x&quot;:0,&quot;y&quot;:4,&quot;height&quot;:83,&quot;width&quot;:82,&quot;color&quot;:&quot;red&quot;,&quot;label&quot;:&quot;Venusaur&quot;},{&quot;x&quot;:0,&quot;y&quot;:5,&quot;height&quot;:63,&quot;width&quot;:62,&quot;color&quot;:&quot;red&quot;,&quot;label&quot;:&quot;Ivysaur&quot;},{&quot;x&quot;:0,&quot;y&quot;:6,&quot;height&quot;:49,&quot;width&quot;:49,&quot;color&quot;:&quot;red&quot;,&quot;label&quot;:&quot;Bulbasaur&quot;}]</span></div></div></div><p></p>
+return result.join(&apos;\n&apos;)</code></pre><div class="section-title">Console<div style="border:1px solid #eee; margin-bottom: 5px;"><span style="font-size:10px;line-height:11px;" class="inspect">       [{&quot;x&quot;:0,&quot;y&quot;:0,&quot;height&quot;:65,&quot;width&quot;:48,&quot;color&quot;:&quot;red&quot;,&quot;label&quot;:&quot;Squirtle&quot;},{&quot;x&quot;:0,&quot;y&quot;:65,&quot;height&quot;:78,&quot;width&quot;:104,&quot;color&quot;:&quot;red&quot;,&quot;label&quot;:&quot;Mega Charizard Y&quot;},{&quot;x&quot;:0,&quot;y&quot;:143,&quot;height&quot;:43,&quot;width&quot;:52,&quot;color&quot;:&quot;red&quot;,&quot;label&quot;:&quot;Charmander&quot;},{&quot;x&quot;:0,&quot;y&quot;:186,&quot;height&quot;:123,&quot;width&quot;:100,&quot;color&quot;:&quot;red&quot;,&quot;label&quot;:&quot;Mega Venusaur&quot;},{&quot;x&quot;:0,&quot;y&quot;:309,&quot;height&quot;:83,&quot;width&quot;:82,&quot;color&quot;:&quot;red&quot;,&quot;label&quot;:&quot;Venusaur&quot;},{&quot;x&quot;:0,&quot;y&quot;:392,&quot;height&quot;:63,&quot;width&quot;:62,&quot;color&quot;:&quot;red&quot;,&quot;label&quot;:&quot;Ivysaur&quot;},{&quot;x&quot;:0,&quot;y&quot;:455,&quot;height&quot;:49,&quot;width&quot;:49,&quot;color&quot;:&quot;red&quot;,&quot;label&quot;:&quot;Bulbasaur&quot;}]</span></div></div></div><p></p>
 <p></p><h2> <span class="text">Compare attack points and represent defense points using colors</span><a href="#top" style="font-size: 14px; float: right;">[top]</a></h2><div class="lodashexercise">   <a name="foo">   </a><div class="section-title">Data        <span style="font-size:10px;line-height:11px;" class="inspect"><span style="visibility:hidden">[{&quot;Name&quot;:&quot;Squirtle&quot;,&quot;Type&quot;:&quot;WATER&quot;,&quot;HP&quot;:44,&quot;Attack&quot;:48,&quot;Defense&quot;:65,&quot;Special Attack&quot;:50,&quot;Special Defense&quot;:64,&quot;Speed&quot;:43},{&quot;Name&quot;:&quot;Mega Charizard Y&quot;,&quot;Type&quot;:&quot;FLYING&quot;,&quot;HP&quot;:78,&quot;Attack&quot;:104,&quot;Defense&quot;:78,&quot;Special Attack&quot;:159,&quot;Special Defense&quot;:115,&quot;Speed&quot;:100},{&quot;Name&quot;:&quot;Charmander&quot;,&quot;Type&quot;:&quot;FIRE&quot;,&quot;HP&quot;:39,&quot;Attack&quot;:52,&quot;Defense&quot;:43,&quot;Special Attack&quot;:60,&quot;Special Defense&quot;:50,&quot;Speed&quot;:65},{&quot;Name&quot;:&quot;Mega Venusaur&quot;,&quot;Type&quot;:&quot;GRASS&quot;,&quot;HP&quot;:80,&quot;Attack&quot;:100,&quot;Defense&quot;:123,&quot;Special Attack&quot;:122,&quot;Special Defense&quot;:120,&quot;Speed&quot;:80},{&quot;Name&quot;:&quot;Venusaur&quot;,&quot;Type&quot;:&quot;GRASS&quot;,&quot;HP&quot;:80,&quot;Attack&quot;:82,&quot;Defense&quot;:83,&quot;Special Attack&quot;:100,&quot;Special Defense&quot;:100,&quot;Speed&quot;:80},{&quot;Name&quot;:&quot;Ivysaur&quot;,&quot;Type&quot;:&quot;GRASS&quot;,&quot;HP&quot;:60,&quot;Attack&quot;:62,&quot;Defense&quot;:63,&quot;Special Attack&quot;:80,&quot;Special Defense&quot;:80,&quot;Speed&quot;:60},{&quot;Name&quot;:&quot;Bulbasaur&quot;,&quot;Type&quot;:&quot;GRASS&quot;,&quot;HP&quot;:45,&quot;Attack&quot;:49,&quot;Defense&quot;:49,&quot;Special Attack&quot;:65,&quot;Special Defense&quot;:65,&quot;Speed&quot;:45}]</span></span></div><div class="output"><div class="left"><div class="section-title">Desired Viz<svg width="100%" height="400"><g transform="translate(0 0)">
     <rect width="48" height="20" style="fill:rgb(135,0,0);
                 stroke-width:1;
@@ -2547,7 +2549,62 @@ return result.join(&apos;\n&apos;)</code></pre><div class="section-title">Consol
     <text transform="translate(0 15)">
         Bulbasaur
     </text>
-</g></svg></div></div><div class="right"><div class="section-title">Actual Viz<svg width="100%" height="400"/></div></div></div><div class="output"><div class="left">    <div class="section-title">       <pre><code>&lt;g transform=&quot;translate(0 0)&quot;&gt;
+</g></svg></div></div><div class="right"><div class="section-title">Actual Viz<svg width="100%" height="400"><g transform="translate(0 0)">
+    <rect width="48" height="20" style="fill:rgb(135,0,0);
+                stroke-width:1;
+                stroke:rgb(0,0,0)"/>
+    <text transform="translate(0 15)">
+      Squirtle
+    </text>    
+</g>
+<g transform="translate(0 20)">
+    <rect width="104" height="20" style="fill:rgb(162,0,0);
+                stroke-width:1;
+                stroke:rgb(0,0,0)"/>
+    <text transform="translate(0 15)">
+      Mega Charizard Y
+    </text>    
+</g>
+<g transform="translate(0 40)">
+    <rect width="52" height="20" style="fill:rgb(89,0,0);
+                stroke-width:1;
+                stroke:rgb(0,0,0)"/>
+    <text transform="translate(0 15)">
+      Charmander
+    </text>    
+</g>
+<g transform="translate(0 60)">
+    <rect width="100" height="20" style="fill:rgb(255,0,0);
+                stroke-width:1;
+                stroke:rgb(0,0,0)"/>
+    <text transform="translate(0 15)">
+      Mega Venusaur
+    </text>    
+</g>
+<g transform="translate(0 80)">
+    <rect width="82" height="20" style="fill:rgb(172,0,0);
+                stroke-width:1;
+                stroke:rgb(0,0,0)"/>
+    <text transform="translate(0 15)">
+      Venusaur
+    </text>    
+</g>
+<g transform="translate(0 100)">
+    <rect width="62" height="20" style="fill:rgb(131,0,0);
+                stroke-width:1;
+                stroke:rgb(0,0,0)"/>
+    <text transform="translate(0 15)">
+      Ivysaur
+    </text>    
+</g>
+<g transform="translate(0 120)">
+    <rect width="49" height="20" style="fill:rgb(102,0,0);
+                stroke-width:1;
+                stroke:rgb(0,0,0)"/>
+    <text transform="translate(0 15)">
+      Bulbasaur
+    </text>    
+</g></svg></div></div></div><div class="output"><div class="left">    <div class="section-title">       <pre><code>&lt;g transform=&quot;translate(0 0)&quot;&gt;
     &lt;rect width=&quot;48&quot;
          height=&quot;20&quot;
          style=&quot;fill:rgb(135,0,0);
@@ -2623,7 +2680,76 @@ return result.join(&apos;\n&apos;)</code></pre><div class="section-title">Consol
     &lt;text transform=&quot;translate(0 15)&quot;&gt;
         Bulbasaur
     &lt;/text&gt;
-&lt;/g&gt;</code></pre></div></div><div class="right">  <div class="section-title">                <pre><code></code></pre></div></div></div><div class="section-title">Solution: SVG Template<pre><code>&lt;g transform=&quot;translate(0 ${d.y})&quot;&gt;
+&lt;/g&gt;</code></pre></div></div><div class="right">  <div class="section-title">                <pre><code>&lt;g transform=&quot;translate(0 0)&quot;&gt;
+    &lt;rect width=&quot;48&quot;
+         height=&quot;20&quot;
+         style=&quot;fill:rgb(135,0,0);
+                stroke-width:1;
+                stroke:rgb(0,0,0)&quot; /&gt;
+    &lt;text transform=&quot;translate(0 15)&quot;&gt;
+      Squirtle
+    &lt;/text&gt;    
+&lt;/g&gt;
+&lt;g transform=&quot;translate(0 20)&quot;&gt;
+    &lt;rect width=&quot;104&quot;
+         height=&quot;20&quot;
+         style=&quot;fill:rgb(162,0,0);
+                stroke-width:1;
+                stroke:rgb(0,0,0)&quot; /&gt;
+    &lt;text transform=&quot;translate(0 15)&quot;&gt;
+      Mega Charizard Y
+    &lt;/text&gt;    
+&lt;/g&gt;
+&lt;g transform=&quot;translate(0 40)&quot;&gt;
+    &lt;rect width=&quot;52&quot;
+         height=&quot;20&quot;
+         style=&quot;fill:rgb(89,0,0);
+                stroke-width:1;
+                stroke:rgb(0,0,0)&quot; /&gt;
+    &lt;text transform=&quot;translate(0 15)&quot;&gt;
+      Charmander
+    &lt;/text&gt;    
+&lt;/g&gt;
+&lt;g transform=&quot;translate(0 60)&quot;&gt;
+    &lt;rect width=&quot;100&quot;
+         height=&quot;20&quot;
+         style=&quot;fill:rgb(255,0,0);
+                stroke-width:1;
+                stroke:rgb(0,0,0)&quot; /&gt;
+    &lt;text transform=&quot;translate(0 15)&quot;&gt;
+      Mega Venusaur
+    &lt;/text&gt;    
+&lt;/g&gt;
+&lt;g transform=&quot;translate(0 80)&quot;&gt;
+    &lt;rect width=&quot;82&quot;
+         height=&quot;20&quot;
+         style=&quot;fill:rgb(172,0,0);
+                stroke-width:1;
+                stroke:rgb(0,0,0)&quot; /&gt;
+    &lt;text transform=&quot;translate(0 15)&quot;&gt;
+      Venusaur
+    &lt;/text&gt;    
+&lt;/g&gt;
+&lt;g transform=&quot;translate(0 100)&quot;&gt;
+    &lt;rect width=&quot;62&quot;
+         height=&quot;20&quot;
+         style=&quot;fill:rgb(131,0,0);
+                stroke-width:1;
+                stroke:rgb(0,0,0)&quot; /&gt;
+    &lt;text transform=&quot;translate(0 15)&quot;&gt;
+      Ivysaur
+    &lt;/text&gt;    
+&lt;/g&gt;
+&lt;g transform=&quot;translate(0 120)&quot;&gt;
+    &lt;rect width=&quot;49&quot;
+         height=&quot;20&quot;
+         style=&quot;fill:rgb(102,0,0);
+                stroke-width:1;
+                stroke:rgb(0,0,0)&quot; /&gt;
+    &lt;text transform=&quot;translate(0 15)&quot;&gt;
+      Bulbasaur
+    &lt;/text&gt;    
+&lt;/g&gt;</code></pre></div></div></div><div class="section-title">Solution: SVG Template<pre><code>&lt;g transform=&quot;translate(0 ${d.y})&quot;&gt;
     &lt;rect width=&quot;${d.width}&quot;
          height=&quot;20&quot;
          style=&quot;fill:rgb(${d.color},0,0);
@@ -2665,10 +2791,10 @@ function iterate(d, i){
 }*/
 function computeColor(d,i){
   var S = _.pluck(data, &apos;Defense&apos;)
-  return (255 * d.Defense)/_.max(S)
+  var result = (255 * d.Defense)/(_.max(S))
+  return _.round(result)
 }
-data = _.sortBy(data, &apos;asc&apos;});
-console.log(data)
+
 var viz = _.map(data, function(d, i){
             return {
                 x: computeX(d, i),
@@ -2684,17 +2810,7 @@ var result = _.map(viz, function(d){
          // invoke the compiled template function on each viz data
          return template({d: d})
      })
-return result.join(&apos;\n&apos;)</code></pre><div class="console error">SyntaxError: Unexpected token }
-    at Function (native)
-    at Object.module.exports.process (C:\Users\ming\Documents\bigd_csci4830\main\book\node_modules\gitbook-plugin-bigdata\vizexercise.js:58:32)
-    at null.&lt;anonymous&gt; (C:\Users\ming\.gitbook\versions\2.2.0\lib\template.js:136:21)
-    at C:\Users\ming\.gitbook\versions\2.2.0\lib\template.js:267:29
-    at _fulfilled (C:\Users\ming\.gitbook\versions\2.2.0\node_modules\q\q.js:787:54)
-    at self.promiseDispatch.done (C:\Users\ming\.gitbook\versions\2.2.0\node_modules\q\q.js:816:30)
-    at Promise.promise.promiseDispatch (C:\Users\ming\.gitbook\versions\2.2.0\node_modules\q\q.js:749:13)
-    at C:\Users\ming\.gitbook\versions\2.2.0\node_modules\q\q.js:810:14
-    at flush (C:\Users\ming\.gitbook\versions\2.2.0\node_modules\q\q.js:108:17)
-    at process._tickCallback (node.js:355:11)</div></div><p></p>
+return result.join(&apos;\n&apos;)</code></pre><div class="section-title">Console<div style="border:1px solid #eee; margin-bottom: 5px;"><span style="font-size:10px;line-height:11px;" class="inspect">       [{&quot;x&quot;:0,&quot;y&quot;:0,&quot;width&quot;:48,&quot;color&quot;:135,&quot;label&quot;:&quot;Squirtle&quot;},{&quot;x&quot;:0,&quot;y&quot;:20,&quot;width&quot;:104,&quot;color&quot;:162,&quot;label&quot;:&quot;Mega Charizard Y&quot;},{&quot;x&quot;:0,&quot;y&quot;:40,&quot;width&quot;:52,&quot;color&quot;:89,&quot;label&quot;:&quot;Charmander&quot;},{&quot;x&quot;:0,&quot;y&quot;:60,&quot;width&quot;:100,&quot;color&quot;:255,&quot;label&quot;:&quot;Mega Venusaur&quot;},{&quot;x&quot;:0,&quot;y&quot;:80,&quot;width&quot;:82,&quot;color&quot;:172,&quot;label&quot;:&quot;Venusaur&quot;},{&quot;x&quot;:0,&quot;y&quot;:100,&quot;width&quot;:62,&quot;color&quot;:131,&quot;label&quot;:&quot;Ivysaur&quot;},{&quot;x&quot;:0,&quot;y&quot;:120,&quot;width&quot;:49,&quot;color&quot;:102,&quot;label&quot;:&quot;Bulbasaur&quot;}]</span></div></div></div><p></p>
 
                     
                     </section>

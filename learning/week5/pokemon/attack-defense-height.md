@@ -93,13 +93,15 @@ function computeHeight(d, i) {
 function computeLabel(d, i){
     return d.Name
 }
-var accum = 0;
 
+
+var S = _.pluck(data, 'Defense')
 function computeY(d, i) {
-  var h = 0;
-  var S = _.pluck(data,"Defense")
-  for(x=0; x < i; x++) h = h + S[x]
-  return x
+    var h = 0
+    for (x = 0; x < i; x++){ 
+      h = h +  S[x] 
+    }
+    return h
 }
 
 function computeColor(d, i) {
