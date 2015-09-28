@@ -25,7 +25,7 @@ Which Airport has the highest number struck? by Brian
 
 ![screenshot](p2_bird.png)
 
-geographical location of the airline that cost the money
+picture show denver intl is the biggest bubble
 
 # (Question 3)
 Which plane model strikes the most birds? by Matt
@@ -38,7 +38,7 @@ What state had the highest number of bird strikes?  By Dian
 
 ![screenshot](p4_bird.png)
 
-different number of bird
+different state's bird
 
 # (Question 5)
 
