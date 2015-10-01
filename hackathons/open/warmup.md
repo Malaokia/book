@@ -16,43 +16,47 @@ together to generate an end-to-end data analysis viz report.
 What is the distribution of courses across colleges?
 
 {% solution %}
-
 var groups = _.groupBy(data, function(d){
     return d['CrsPBAColl']
 })
+var map = _.map(groups,function(x, value){
+    return {"name": value, "count": _.pluck(x,'Course').length};
+});
+console.log(map);
 
 // TODO: add real code to convert groups (which is an object) into an array like below
 // This array should have a lot more elements.
-var counts = [{"name": "AS","count": 3237},
+/*var counts = {"name": "AS","count": 3237},
     {"name": "BU","count": 378},
     {"name": "EB","count": 139},
-    {"name": "EN","count": 573}]
+    {"name": "EN","count": 573}
 
-console.log(counts)
+console.log(counts)*/
 
 // TODO: modify the code below to produce a nice vertical bar charts
 
 function computeX(d, i) {
-    return 0
+    return i*10;
 }
 
 function computeHeight(d, i) {
-    return 20
+
+    return d.count/10 ;
 }
 
 function computeWidth(d, i) {
-    return 20 * i + 100
+    return 10;
 }
 
 function computeY(d, i) {
-    return 20 * i
+    return 0;
 }
 
 function computeColor(d, i) {
-    return 'red'
+    return 'green'
 }
 
-var viz = _.map(counts, function(d, i){
+var viz = _.map(map, function(d, i){
             return {
                 x: computeX(d, i),
                 y: computeY(d, i),
@@ -65,15 +69,15 @@ console.log(viz)
 
 var result = _.map(viz, function(d){
          // invoke the compiled template function on each viz data
-         return template({d: d})
+         return template({d: d});
      })
 return result.join('\n')
 
 {% template %}
 
-<rect x="0"
+<rect x="${d.x}"
       y="${d.y}"
-      height="20"
+      height="${d.height}"
       width="${d.width}"
       style="fill:${d.color};
              stroke-width:3;

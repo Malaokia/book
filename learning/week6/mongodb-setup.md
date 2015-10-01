@@ -16,6 +16,7 @@ about this server are provided below:
 - user name: bigdatahci
 - password: bigdatahci2015
 
+
 Read the documentation to figure out what command to run in order to _dump_
 all the data into a file: [mongodump](http://docs.mongodb.org/manual/reference/program/mongodump/).
 This is a part of the challenge to see if you can rely on online documentation to
@@ -45,7 +46,7 @@ Issue a query:
 ```
 The goal is to be able to see something like below in the terminal.
 
-![screenshot](./query.png)
+![screenshot](./mongoquery.png)
 
 (Replace this screenshot with a screenshot of each individual's own computer.
  Include the entire desktop in the screenshot so we can know this screenshot
