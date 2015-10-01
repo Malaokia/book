@@ -110,8 +110,9 @@ function iterate(d, i){
   }
   return t
 }*/
+var S = _.pluck(data, 'Defense')
 function computeColor(d,i){
-  var S = _.pluck(data, 'Defense')
+  
   var result = (255 * d.Defense)/(_.max(S))
   return _.round(result)
 }
